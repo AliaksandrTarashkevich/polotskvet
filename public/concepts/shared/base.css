@@ -100,8 +100,10 @@ dialog.cd::backdrop{background:rgba(10,12,16,.52);-webkit-backdrop-filter:blur(3
 .pv-ic:hover{background:#262A33;color:#fff}
 .pv-show{position:fixed;z-index:1000;top:8px;right:8px;display:none;height:30px;padding:0 12px;border-radius:999px;background:#15171C;color:#fff;font:600 12px/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;box-shadow:0 6px 20px rgba(0,0,0,.25)}
 .pv-off .pv-show{display:block}
-@media (max-width:1260px){.pv-tab:not([aria-current]) span{display:none}}
-@media (max-width:980px){.pv-l{display:none}.pv{gap:6px 14px}}
+/* measured widths: full bar ~1414px, short tab names ~1096px, no group labels ~891px */
+@media (max-width:1439px){.pv-tab:not([aria-current]) span{display:none}}
+@media (max-width:1109px){.pv-l{display:none}.pv{gap:6px 14px}}
+@media (max-width:900px){.pv-seg{display:none}.pv-cycle{display:block}}
 @media (max-width:700px){
   .pv{flex-wrap:wrap;padding:6px 6px 8px 10px;gap:6px 12px}
   .pv-layouts{flex:1 1 100%;order:1}
