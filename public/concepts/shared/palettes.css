@@ -1,0 +1,39 @@
+/* PolotskVet — concept palettes (throwaway preview).
+   Every layout reads only these tokens, so any palette can be tried on any layout.
+   The logo is never recoloured: each palette is built so the red paw sits comfortably on --paper. */
+
+:root{--photo:none}
+
+/* 1 · Тёплая бумага — cream paper, espresso ink; red appears only where you act */
+:root[data-palette="1"]{
+  --paper:#F7F1E6;--paper-2:#EFE6D6;--card:#FFFCF6;--ink:#2A211B;--ink-2:#6A5C50;--line:#DDD0BD;
+  --brand:#3A2B22;--on-brand:#F7F1E6;--on-brand-2:#CDBBA8;--tint:#E6E8D8;
+  --cta:#C22A3F;--on-cta:#FFFFFF;--cta-inv:#F7F1E6;--on-cta-inv:#2A211B;--signal:#E0475B}
+
+/* 2 · Клиника — white, midnight navy, ice blue; red is a 2% signal */
+:root[data-palette="2"]{
+  --paper:#FFFFFF;--paper-2:#F2F5F9;--card:#FFFFFF;--ink:#0E1D31;--ink-2:#55677D;--line:#D8E0EA;
+  --brand:#0F2240;--on-brand:#F2F5F9;--on-brand-2:#9FB2C8;--tint:#E7EEF6;
+  --cta:#0F2240;--on-cta:#FFFFFF;--cta-inv:#FFFFFF;--on-cta-inv:#0F2240;--signal:#D22B40}
+
+/* 3 · Петроль — sand paper, deep petrol panels, coral signal */
+:root[data-palette="3"]{
+  --paper:#F6F2EA;--paper-2:#EBE5D8;--card:#FFFFFF;--ink:#0F2E2E;--ink-2:#4F6B69;--line:#D9D2C3;
+  --brand:#0E4A4C;--on-brand:#F4F0E6;--on-brand-2:#A9CBC6;--tint:#DCEAE5;
+  --cta:#0E4A4C;--on-cta:#FFFFFF;--cta-inv:#F6F2EA;--on-cta-inv:#0F2E2E;--signal:#D9483B}
+
+/* 4 · Чёрно-белая — off-white, near-black, the logo red as the only colour */
+:root[data-palette="4"]{
+  --paper:#F4F3EF;--paper-2:#E9E7E1;--card:#FFFFFF;--ink:#121212;--ink-2:#5C5B57;--line:#D4D2CB;
+  --brand:#121212;--on-brand:#F4F3EF;--on-brand-2:#A3A19B;--tint:#E9E7E1;
+  --cta:#C8283E;--on-cta:#FFFFFF;--cta-inv:#C8283E;--on-cta-inv:#FFFFFF;--signal:#C8283E}
+
+/* 5 · Персик и слива — peach cream, plum ink, lavender tint */
+:root[data-palette="5"]{
+  --paper:#FFF5EC;--paper-2:#FDE6D6;--card:#FFFFFF;--ink:#33202E;--ink-2:#775E6B;--line:#F1D6C4;
+  --brand:#46263D;--on-brand:#FFF1E5;--on-brand-2:#D5B5C6;--tint:#EDE4F6;
+  --cta:#CC2F45;--on-cta:#FFFFFF;--cta-inv:#FFC2A8;--on-cta-inv:#33202E;--signal:#E04A5A}
+
+/* Photo modes (the colour-matched files are the default; "orig" swaps the files in preview.js) */
+:root[data-photos="muted"]{--photo:saturate(.5) sepia(.14) contrast(1.04)}
+:root[data-photos="bw"]{--photo:grayscale(1) contrast(1.08) brightness(1.03)}

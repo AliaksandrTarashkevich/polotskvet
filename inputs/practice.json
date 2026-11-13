@@ -89,8 +89,8 @@
   "delivery": {
     "preferredSourceHosting": "GitHub",
     "preferredWebHosting": "Vercel",
-    "repositoryUrl": null,
-    "deploymentUrl": null,
+    "repositoryUrl": "https://github.com/AliaksandrTarashkevich/polotskvet",
+    "deploymentUrl": "https://polotskvet.vercel.app",
     "accessFromBelarusVerified": false,
     "archiveRequested": true
   },
@@ -120,6 +120,14 @@
     "servicesBeforeOnlineAndPrinciples": true,
     "catMotion": "document_pointer_parallax",
     "showDemoFooter": false,
-    "brandLogo": "assets/brand/polotskvet-logo.png"
+    "brandLogo": "assets/brand/polotskvet-logo.png",
+    "redesign": {
+      "status": "five_concepts_awaiting_choice",
+      "startedDate": "2026-11-13",
+      "fixedByUser": ["logo"],
+      "conceptsPath": "public/concepts/",
+      "previewUrl": "https://polotskvet.vercel.app/concepts/",
+      "note": "Поля выше описывают прежнюю красно-белую версию, которая остаётся на основной странице до выбора нового направления."
+    }
   }
 }

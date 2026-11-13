@@ -1,0 +1,107 @@
+/* PolotskVet concepts — shared reset, site behaviours and the preview bar. */
+
+/* ---------- reset ---------- */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:calc(var(--pv-h,0px) + var(--hd-h,72px) + 16px)}
+body{margin:0;padding-top:var(--pv-h,0px);background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:clip}
+h1,h2,h3,h4,p,figure,blockquote,dl,dd,ul,ol{margin:0;padding:0}
+ul,ol{list-style:none}
+img,svg{display:block}
+img{max-width:100%;height:auto}
+img[data-ph]{filter:var(--photo,none)}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent}
+summary{cursor:pointer}
+:focus-visible{outline:2px solid var(--cta);outline-offset:3px}
+.wrap{width:min(100% - 2*var(--gut,24px),var(--max,1200px));margin-inline:auto}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* ---------- scroll reveal (only when JS runs and motion is welcome) ---------- */
+@media (prefers-reduced-motion:no-preference){
+  .js [data-rv]{opacity:0;transform:translateY(16px);transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+  .js [data-rv].in{opacity:1;transform:none}
+}
+
+/* ---------- mobile menu ---------- */
+.menu-btn{display:none}
+@media (max-width:900px){
+  .menu-btn{display:inline-grid;place-items:center;flex:none;width:44px;height:44px;margin-right:-8px}
+  .menu-btn span,.menu-btn span::before,.menu-btn span::after{display:block;width:20px;height:2px;border-radius:2px;background:currentColor;transition:transform .2s,background .2s}
+  .menu-btn span{position:relative}
+  .menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0}
+  .menu-btn span::before{top:-6px}
+  .menu-btn span::after{top:6px}
+  .menu-open .menu-btn span{background:transparent}
+  .menu-open .menu-btn span::before{transform:translateY(6px) rotate(45deg)}
+  .menu-open .menu-btn span::after{transform:translateY(-6px) rotate(-45deg)}
+  /* "html" prefix: these must win over each layout's own desktop .nav rules */
+  html .nav{position:fixed;z-index:19;left:0;right:0;top:calc(var(--pv-h,0px) + var(--hd-h,64px));display:none;flex-direction:column;gap:0;margin:0;padding:6px var(--gut,20px) 18px;border-radius:0;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 24px 40px -28px rgba(0,0,0,.4)}
+  html.menu-open .nav{display:flex}
+  html .nav a{padding:15px 0;border:0;border-bottom:1px solid var(--line);border-radius:0;background:none;color:var(--ink);font-size:1.1rem;letter-spacing:0;text-transform:none}
+  html .nav a:last-child{border-bottom:0}
+}
+
+/* ---------- sticky contact bar on phones ---------- */
+.mbar{display:none}
+@media (max-width:760px){
+  .mbar{position:fixed;z-index:30;left:0;right:0;bottom:0;display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--paper) 92%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-top:1px solid var(--line)}
+  .mbar button{min-height:50px;border-radius:var(--btn-r,12px);font-weight:600;font-size:1rem}
+  .mbar .m1{background:var(--cta);color:var(--on-cta)}
+  .mbar .m2{background:var(--card);color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+  body{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
+}
+
+/* ---------- contact dialog (honest: no phone yet) ---------- */
+dialog.cd{width:min(92vw,440px);padding:0;border:0;border-radius:var(--dlg-r,18px);background:var(--card);color:var(--ink);box-shadow:0 30px 80px rgba(0,0,0,.3)}
+dialog.cd::backdrop{background:rgba(10,12,16,.52);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px)}
+.cd-in{position:relative;padding:28px 26px 24px}
+.cd h2{font-size:1.4rem;line-height:1.2;margin:0 34px 10px 0;text-transform:none;letter-spacing:-.01em}
+.cd p{color:var(--ink-2);line-height:1.55;font-size:.98rem}
+.cd-topic{display:inline-block;margin-bottom:12px;padding:5px 11px;border-radius:999px;background:var(--paper-2);color:var(--ink);font-size:.82rem;font-weight:600}
+.cd-rows{display:grid;gap:8px;margin:18px 0 20px}
+.cd-row{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:13px 15px;border:1px dashed var(--line);border-radius:12px;font-size:.95rem}
+.cd-row b{font-weight:600}
+.cd-row span{color:var(--ink-2);font-size:.86rem;text-align:right}
+.cd-ok{width:100%;min-height:50px;border-radius:var(--btn-r,12px);background:var(--ink);color:var(--paper);font-weight:600}
+.cd-x{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;font-size:1.5rem;line-height:1;color:var(--ink-2)}
+.cd-x:hover{background:var(--paper-2);color:var(--ink)}
+
+/* ---------- preview bar (not part of any design) ---------- */
+.pv{position:fixed;z-index:1000;top:0;left:0;right:0;display:flex;align-items:center;gap:6px 20px;min-height:46px;padding:0 10px 0 14px;background:#15171C;color:#E9EAEE;font:500 13px/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:0;white-space:nowrap}
+.pv-off .pv{display:none}
+.pv *{font-family:inherit}
+.pv-g{display:flex;align-items:center;gap:5px;flex:none}
+.pv-l{margin-right:4px;color:#8A8F9B;font-size:11px;letter-spacing:.09em;text-transform:uppercase}
+.pv-tab{display:inline-flex;align-items:center;gap:7px;height:30px;padding:0 10px;border-radius:8px;color:#C9CCD4;transition:background .15s,color .15s}
+.pv-tab b{font-weight:700}
+.pv-tab:hover{background:#262A33;color:#fff}
+.pv-tab[aria-current]{background:#fff;color:#15171C}
+.pv-sw{position:relative;flex:none;width:26px;height:26px;border-radius:50%;background:linear-gradient(90deg,var(--a) 50%,var(--b) 50%);box-shadow:0 0 0 1px rgba(255,255,255,.22);transition:transform .15s}
+.pv-sw::after{content:"";position:absolute;left:50%;top:50%;width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--c);box-shadow:0 0 0 1.5px rgba(255,255,255,.85)}
+.pv-sw:hover{transform:scale(1.12)}
+.pv-sw[aria-pressed="true"]{box-shadow:0 0 0 2px #15171C,0 0 0 4px #fff}
+.pv-sw[data-native]::before{content:"";position:absolute;left:50%;bottom:-8px;width:4px;height:4px;margin-left:-2px;border-radius:50%;background:#8A8F9B}
+.pv-seg{display:flex;padding:3px;border-radius:9px;background:#262A33}
+.pv-seg button{height:24px;padding:0 9px;border-radius:6px;color:#C9CCD4;font-size:12.5px}
+.pv-seg button:hover{color:#fff}
+.pv-seg button[aria-pressed="true"]{background:#fff;color:#15171C}
+.pv-cycle{display:none;height:30px;padding:0 11px;border-radius:8px;background:#262A33;color:#E9EAEE;font-size:12.5px}
+.pv-tools{display:flex;align-items:center;gap:2px;margin-left:auto;flex:none}
+.pv-ic{width:32px;height:32px;border-radius:8px;color:#A9ADB8;font-size:17px;line-height:1}
+.pv-ic:hover{background:#262A33;color:#fff}
+.pv-show{position:fixed;z-index:1000;top:8px;right:8px;display:none;height:30px;padding:0 12px;border-radius:999px;background:#15171C;color:#fff;font:600 12px/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.pv-off .pv-show{display:block}
+@media (max-width:1260px){.pv-tab:not([aria-current]) span{display:none}}
+@media (max-width:980px){.pv-l{display:none}.pv{gap:6px 14px}}
+@media (max-width:700px){
+  .pv{flex-wrap:wrap;padding:6px 6px 8px 10px;gap:6px 12px}
+  .pv-layouts{flex:1 1 100%;order:1}
+  .pv-tools{order:2;position:absolute;top:5px;right:4px}
+  .pv-palettes{order:3}
+  .pv-photos{order:4;margin-left:auto}
+  .pv-seg{display:none}
+  .pv-cycle{display:block}
+  .pv-tab{padding:0 9px}
+  .pv-ic[data-act="reset"]{display:none}
+}

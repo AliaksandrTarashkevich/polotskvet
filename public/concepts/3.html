@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="ru" data-layout="3">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Вариант 3 · Сервис — ПолоцкВет</title>
+<meta name="description" content="Черновой вариант дизайна: ветеринарный врач Роман Чертопалов, выезд на дом в Полоцке и Новополоцке, онлайн-консультации.">
+<link rel="icon" type="image/png" sizes="64x64" href="../assets/brand/favicon.png">
+<script src="shared/preview-head.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400..800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared/palettes.css">
+<link rel="stylesheet" href="shared/base.css">
+<link rel="stylesheet" href="css/3.css">
+<script src="shared/site.js" defer></script>
+<script src="shared/preview.js" defer></script>
+</head>
+<body>
+
+<header class="hd">
+  <div class="wrap hd-in">
+    <a class="logo" href="#top" aria-label="PolotskVet — в начало страницы"><img src="../assets/brand/polotskvet-logo.png" alt="PolotskVet" width="1086" height="362"></a>
+    <nav class="nav" id="nav" aria-label="Разделы сайта">
+      <a href="#doctor">Врач</a>
+      <a href="#how">Как это проходит</a>
+      <a href="#price">Стоимость</a>
+      <a href="#faq">Вопросы</a>
+    </nav>
+    <button class="btn btn-cta hd-cta" type="button" data-contact>Вызвать врача</button>
+    <button class="menu-btn" type="button" data-menu aria-label="Меню" aria-expanded="false" aria-controls="nav"><span></span></button>
+  </div>
+</header>
+
+<main>
+  <section class="hero wrap" id="top">
+    <figure class="hero-photo">
+      <img data-ph="roman-portrait" src="photos/roman-portrait.jpg" alt="Ветеринарный врач Роман Чертопалов с медицинской сумкой" width="853" height="1280" fetchpriority="high">
+      <span class="chip-top">8 лет практики</span>
+      <figcaption><b>Роман Чертопалов</b><span>ветеринарный врач</span></figcaption>
+    </figure>
+
+    <div class="panel">
+      <div class="who">
+        <span class="ava"><img data-ph="roman-reading" src="photos/roman-reading.jpg" alt="" width="853" height="1280"></span>
+        <span><b>Роман Чертопалов</b><small>ветеринарный врач · 8 лет практики</small></span>
+      </div>
+      <p class="kicker"><i></i>Полоцк · Новополоцк · онлайн</p>
+      <h1>Ветеринар на&nbsp;дом в&nbsp;Полоцке и&nbsp;Новополоцке</h1>
+      <p class="lead">Выберите ситуацию&nbsp;— покажем, с&nbsp;чего начать и&nbsp;что сообщить врачу.</p>
+
+      <div class="sc" data-tabs>
+        <div class="sc-tabs" role="tablist" aria-label="Что случилось">
+          <button type="button" role="tab" data-tab="ill" aria-selected="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.2c-4.6-3-7.5-5.9-7.5-9.5A4.2 4.2 0 0 1 12 8.2a4.2 4.2 0 0 1 7.5 2.5c0 3.6-2.9 6.5-7.5 9.5Z"/><path d="M7.6 12.4h2.3l1.2-2.2 1.9 4 1.1-1.8h2.3"/></svg>
+            <span>Питомец заболел</span>
+          </button>
+          <button type="button" role="tab" data-tab="vac" aria-selected="false" tabindex="-1">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3.5 5.5 6v5.4c0 4 2.6 7.3 6.5 9.1 3.9-1.8 6.5-5.1 6.5-9.1V6L12 3.5Z"/><path d="M12 9v5.4M9.3 11.7h5.4"/></svg>
+            <span>Нужна прививка</span>
+          </button>
+          <button type="button" role="tab" data-tab="lab" aria-selected="false" tabindex="-1">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3.5h6"/><path d="M10 3.5v9.8l-3.6 5.4a1.2 1.2 0 0 0 1 1.8h9.2a1.2 1.2 0 0 0 1-1.8L14 13.3V3.5"/><path d="M8.3 15.5h7.4"/></svg>
+            <span>Сдать анализы</span>
+          </button>
+          <button type="button" role="tab" data-tab="care" aria-selected="false" tabindex="-1">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="5"/><path d="M12 8.5v7M8.5 12h7"/></svg>
+            <span>Нужны процедуры</span>
+          </button>
+          <button type="button" role="tab" data-tab="online" aria-selected="false" tabindex="-1">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6.8A2.8 2.8 0 0 1 7.8 4h8.4A2.8 2.8 0 0 1 19 6.8v5.4a2.8 2.8 0 0 1-2.8 2.8h-4.9L7 18.5V15a2.8 2.8 0 0 1-2-2.8V6.8Z"/><path d="M9 9.5h6M9 12h3.5"/></svg>
+            <span>Посоветоваться онлайн</span>
+          </button>
+        </div>
+
+        <div class="sc-panel" role="tabpanel" data-panel="ill">
+          <div class="sc-main">
+            <h2 class="sc-title">Осмотр и&nbsp;консультация на&nbsp;дому</h2>
+            <p>Роман осмотрит питомца дома, обсудит его состояние и&nbsp;объяснит дальнейшие действия. Возможность помощи на&nbsp;дому уточняем до&nbsp;выезда: некоторые исследования и&nbsp;лечение требуют оборудования клиники.</p>
+            <div class="sc-act"><button class="btn btn-inv" type="button" data-contact="Осмотр и консультация">Вызвать врача</button><span>Стоимость уточняется при записи</span></div>
+          </div>
+          <div class="sc-say"><p>Что сообщить при записи</p><ul><li>Город и&nbsp;адрес</li><li>Возраст питомца</li><li>Причину обращения</li></ul></div>
+        </div>
+        <div class="sc-panel" role="tabpanel" data-panel="vac" hidden>
+          <div class="sc-main">
+            <h2 class="sc-title">Вакцинация на&nbsp;дому</h2>
+            <p>Профилактические прививки кошкам и&nbsp;собакам&nbsp;— дома, без поездки в&nbsp;клинику. Условия проведения уточняются заранее.</p>
+            <div class="sc-act"><button class="btn btn-inv" type="button" data-contact="Вакцинация">Вызвать врача</button><span>Стоимость уточняется при записи</span></div>
+          </div>
+          <div class="sc-say"><p>Что сообщить при записи</p><ul><li>Город и&nbsp;адрес</li><li>Возраст питомца</li><li>Есть&nbsp;ли ветеринарный паспорт</li></ul></div>
+        </div>
+        <div class="sc-panel" role="tabpanel" data-panel="lab" hidden>
+          <div class="sc-main">
+            <h2 class="sc-title">Забор анализов на&nbsp;дому</h2>
+            <p>Забор биоматериала на&nbsp;дому. Перечень исследований и&nbsp;подготовку согласуем перед выездом.</p>
+            <div class="sc-act"><button class="btn btn-inv" type="button" data-contact="Забор анализов">Вызвать врача</button><span>Стоимость уточняется при записи</span></div>
+          </div>
+          <div class="sc-say"><p>Что сообщить при записи</p><ul><li>Город и&nbsp;адрес</li><li>Какие исследования нужны</li><li>Назначения врача, если есть</li></ul></div>
+        </div>
+        <div class="sc-panel" role="tabpanel" data-panel="care" hidden>
+          <div class="sc-main">
+            <h2 class="sc-title">Лечебные процедуры</h2>
+            <p>Назначенные ветеринаром процедуры и&nbsp;уход. Возможность выполнения дома обсуждается отдельно.</p>
+            <div class="sc-act"><button class="btn btn-inv" type="button" data-contact="Лечебные процедуры">Вызвать врача</button><span>Стоимость уточняется при записи</span></div>
+          </div>
+          <div class="sc-say"><p>Что сообщить при записи</p><ul><li>Город и&nbsp;адрес</li><li>Что назначено питомцу</li><li>Возраст питомца</li></ul></div>
+        </div>
+        <div class="sc-panel" role="tabpanel" data-panel="online" hidden>
+          <div class="sc-main">
+            <h2 class="sc-title">Онлайн-консультация</h2>
+            <p>Расскажите, что беспокоит питомца, и&nbsp;покажите назначения или результаты обследований. Обсудим следующие шаги и&nbsp;необходимость очного приёма.</p>
+            <div class="sc-act"><button class="btn btn-inv" type="button" data-contact="Онлайн-консультация">Записаться онлайн</button><span>Стоимость уточняется при записи</span></div>
+          </div>
+          <div class="sc-say"><p>Что подготовить</p><ul><li>Что беспокоит питомца</li><li>Назначения, если есть</li><li>Результаты обследований</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bento wrap">
+    <article class="cell c-doc" id="doctor" data-rv>
+      <p class="kick">Кто приедет</p>
+      <h2>Роман Чертопалов</h2>
+      <p class="txt">Помогает понять, какая помощь нужна питомцу, и&nbsp;объясняет, что делать дальше&nbsp;— с&nbsp;вниманием к&nbsp;животному и&nbsp;вашим вопросам.</p>
+      <ul class="spec"><li>Кардиология</li><li>Нефроурология</li><li>Функциональная диагностика (УЗИ)</li></ul>
+      <dl class="nums">
+        <div><dt>8 лет</dt><dd>ветеринарной практики</dd></div>
+        <div><dt>3 года</dt><dd>в&nbsp;клинике «Девять жизней», Минск</dd></div>
+        <div><dt>Главврач</dt><dd>исполнял обязанности главного врача</dd></div>
+      </dl>
+      <p class="foot"><b>Pet‑friendly приём.</b> Спокойно и&nbsp;бережно&nbsp;— с&nbsp;вниманием к&nbsp;характеру и&nbsp;самочувствию питомца.</p>
+    </article>
+    <figure class="cell c-photo" data-rv style="--d:.08s">
+      <img data-ph="roman-reading" src="photos/roman-reading.jpg" alt="Роман Чертопалов с книгой по кардиологии" width="853" height="1280" loading="lazy">
+      <figcaption><b>Доказательная медицина</b>Обоснованные назначения и&nbsp;понятные объяснения: что делаем и&nbsp;зачем это нужно.</figcaption>
+    </figure>
+
+    <article class="cell c-steps" id="how" data-rv>
+      <p class="kick">Как это проходит</p>
+      <h3>Три шага до&nbsp;приёма</h3>
+      <ol class="st">
+        <li><div><b>Расскажите о&nbsp;питомце</b><span>Город и&nbsp;адрес, возраст животного, причина обращения.</span></div></li>
+        <li><div><b>Согласуем выезд</b><span>Возможность помощи на&nbsp;дому, время визита и&nbsp;предполагаемая стоимость.</span></div></li>
+        <li><div><b>Врач приедет на&nbsp;приём</b><span>Осмотрит питомца, проведёт согласованные процедуры и&nbsp;объяснит, что дальше.</span></div></li>
+      </ol>
+    </article>
+    <article class="cell c-map" data-rv style="--d:.08s">
+      <p class="kick">Зона выезда</p>
+      <h3>Полоцк, Новополоцк и&nbsp;окрестности</h3>
+      <svg class="map" viewBox="0 0 340 176" role="img" aria-label="Схема зоны выезда: Новополоцк и Полоцк на Западной Двине">
+        <ellipse class="zone" cx="170" cy="92" rx="160" ry="74"/>
+        <path class="riv" d="M348 172C290 150 262 130 214 118S126 92 84 70 22 44-8 30"/>
+        <circle class="pin" cx="100" cy="98" r="9"/><circle class="pin-c" cx="100" cy="98" r="3.4"/>
+        <circle class="pin" cx="242" cy="94" r="9"/><circle class="pin-c" cx="242" cy="94" r="3.4"/>
+        <text x="100" y="128" text-anchor="middle">Новополоцк</text>
+        <text x="242" y="74" text-anchor="middle">Полоцк</text>
+        <text class="rv" x="282" y="166" text-anchor="middle">Западная Двина</text>
+      </svg>
+      <p class="txt sm">Полоцкий район и&nbsp;ближайшие населённые пункты. Дальние адреса&nbsp;— по&nbsp;согласованию.</p>
+    </article>
+    <article class="cell c-prep" data-rv style="--d:.16s">
+      <p class="kick">К приезду врача</p>
+      <h3>Что подготовить</h3>
+      <ul class="ck">
+        <li>Ветеринарный паспорт</li>
+        <li>Предыдущие назначения</li>
+        <li>Результаты обследований</li>
+        <li>Спокойное, хорошо освещённое место</li>
+      </ul>
+    </article>
+
+    <article class="cell c-price" id="price" data-rv>
+      <p class="kick">Стоимость</p>
+      <h3>Из чего складывается цена</h3>
+      <ul class="pr">
+        <li><b>Выезд врача</b><span>по согласованному адресу</span></li>
+        <li><b>Осмотр и&nbsp;консультация</b><span>с учётом причины обращения</span></li>
+        <li><b>Процедуры и&nbsp;материалы</b><span>по согласованному плану</span></li>
+      </ul>
+      <div class="pr-foot"><span class="soon">Прайс появится перед запуском</span><button class="lnk" type="button" data-contact="Стоимость выезда">Уточнить стоимость →</button></div>
+    </article>
+    <article class="cell c-limits" data-rv style="--d:.08s">
+      <div>
+        <p class="kick">Честно о&nbsp;формате</p>
+        <h3>Не всё можно сделать дома</h3>
+        <p class="txt">Возможности домашнего приёма ограничены: некоторые исследования и&nbsp;лечение требуют оборудования клиники. Подходит&nbsp;ли выезд для вашей ситуации, обсуждаем до&nbsp;записи.</p>
+      </div>
+      <span class="round"><img data-ph="roman-exam-dog" src="photos/roman-exam-dog.jpg" alt="Роман Чертопалов обследует собаку" width="720" height="1280" loading="lazy"></span>
+    </article>
+  </section>
+
+  <section class="faq wrap" id="faq">
+    <h2 data-rv>Частые вопросы</h2>
+    <div class="qa" data-rv>
+      <details><summary>Можно получить консультацию онлайн?</summary><p>Да. Онлайн-консультацию можно согласовать с&nbsp;Романом. Если ситуации нужен очный осмотр, дальнейший формат помощи обсуждается с&nbsp;врачом.</p></details>
+      <details><summary>Как записаться на&nbsp;выезд?</summary><p>Свяжитесь с&nbsp;врачом, назовите город и&nbsp;адрес, расскажите о&nbsp;питомце и&nbsp;причине обращения. Возможность домашнего приёма и&nbsp;время визита согласовываются заранее.</p></details>
+      <details><summary>Что входит в&nbsp;стоимость вызова?</summary><p>Состав зависит от задачи: выезд, осмотр, необходимые процедуры, препараты и&nbsp;расходные материалы. Итоговую стоимость и&nbsp;возможные доплаты уточняйте перед записью.</p></details>
+      <details><summary>Все&nbsp;ли процедуры можно провести дома?</summary><p>Нет. Некоторые исследования и&nbsp;лечение требуют оборудования клиники. Перед записью обсудите с&nbsp;врачом, подходит&nbsp;ли выезд для вашей ситуации.</p></details>
+    </div>
+  </section>
+
+  <section class="contact wrap" id="contact" data-rv>
+    <div>
+      <h2>Расскажите, что случилось,&nbsp;— подскажем формат помощи</h2>
+      <p>Назовите город и&nbsp;адрес, возраст животного и&nbsp;причину обращения.</p>
+    </div>
+    <div class="ways">
+      <button class="way" type="button" data-contact="Звонок"><b>Позвонить</b><span>номер появится перед запуском</span></button>
+      <button class="way" type="button" data-contact="Сообщение"><b>Написать в&nbsp;мессенджер</b><span>появится перед запуском</span></button>
+    </div>
+  </section>
+</main>
+
+<footer class="ft wrap">
+  <a class="logo" href="#top" aria-label="PolotskVet — в начало страницы"><img src="../assets/brand/polotskvet-logo.png" alt="PolotskVet" width="1086" height="362" loading="lazy"></a>
+  <p>Полоцк, Новополоцк и&nbsp;окрестности · выездная практика и&nbsp;онлайн-консультации</p>
+  <p>© 2026 ПолоцкВет · Роман Чертопалов</p>
+</footer>
+
+<div class="mbar">
+  <button class="m1" type="button" data-contact="Звонок">Позвонить</button>
+  <button class="m2" type="button" data-contact="Сообщение">Написать</button>
+</div>
+
+</body>
+</html>
