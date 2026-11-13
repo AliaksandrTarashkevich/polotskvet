@@ -1,0 +1,69 @@
+{
+  "generatedAt": "2026-11-13",
+  "method": "built-in image generation",
+  "assets": [
+    {
+      "key": "home-care",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Asset type: transparent PNG service illustration for a veterinarian's website. A single polished semi-realistic 3D editorial website service icon, isolated with a genuinely transparent background (alpha), no panel, no circular badge and no opaque backdrop. Adult, trustworthy veterinary care brand for a personal veterinarian in Belarus; elegant product-photography materials, matte white porcelain, deep navy and a restrained cobalt-blue detail (#2166db). Soft daylight from upper left, subtle contact shadow, near-front three-quarter view, compact balanced composition, object fully within frame with generous clear margins. A coherent family of icons: restrained, tactile, credible, clean silhouette readable at 100–150 pixels. No lettering, words, numerals, logos, watermark, medical cross, people or faces. No childish cartoon, no neon, no inflated emoji or toy look. Subject: a practical small navy-and-white veterinary doctor's bag with a subtle embossed paw shape, a cobalt blue stethoscope resting beside it. This represents a home visit and examination, not a clinic building. No unnecessary objects.",
+      "sourcePath": "/workspace/scratch/969838ce9d1f/generated_images/exec-d0e36251-986c-4532-8697-5995f59bc8b4.png",
+      "localPath": "assets/generated-v5/home-care.png",
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    {
+      "key": "online-consultation",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Asset type: transparent PNG service illustration for a veterinarian's website. A single polished semi-realistic 3D editorial website service icon, isolated with a genuinely transparent background (alpha), no panel, no circular badge and no opaque backdrop. Adult, trustworthy veterinary care brand for a personal veterinarian in Belarus; elegant product-photography materials, matte white porcelain, deep navy and a restrained cobalt-blue detail (#2166db). Soft daylight from upper left, subtle contact shadow, near-front three-quarter view, compact balanced composition, object fully within frame with generous clear margins. A coherent family of icons: restrained, tactile, credible, clean silhouette readable at 100–150 pixels. No lettering, words, numerals, logos, watermark, medical cross, people or faces. No childish cartoon, no neon, no inflated emoji or toy look. Subject: a slightly angled modern smartphone showing a simple friendly cat portrait on a pale-blue screen, next to one small white speech bubble with three blue dots. Depict a veterinary video consultation. Screen has no text, no interface labels and no identifiable human portrait. No extra devices.",
+      "sourcePath": "/workspace/scratch/969838ce9d1f/generated_images/exec-6d83d815-d9ef-48f9-b701-e8a76af5ee95.png",
+      "localPath": "assets/generated-v5/online-consultation.png",
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "key": "vaccination",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Asset type: transparent PNG service illustration for a veterinarian's website. A single polished semi-realistic 3D editorial website service icon, isolated with a genuinely transparent background (alpha), no panel, no circular badge and no opaque backdrop. Adult, trustworthy veterinary care brand for a personal veterinarian in Belarus; elegant product-photography materials, matte white porcelain, deep navy and a restrained cobalt-blue detail (#2166db). Soft daylight from upper left, subtle contact shadow, near-front three-quarter view, compact balanced composition, object fully within frame with generous clear margins. A coherent family of icons: restrained, tactile, credible, clean silhouette readable at 100–150 pixels. No lettering, words, numerals, logos, watermark, medical cross, people or faces. No childish cartoon, no neon, no inflated emoji or toy look. Subject: one small capped veterinary vaccine vial with an unlettered plain white label and a tiny embossed paw, with a sealed protective syringe lying diagonally beside it. Restrained glass and brushed-metal textures, blue cap. No visible exposed sharp needle, no blood, no treatment being performed.",
+      "sourcePath": "/workspace/scratch/969838ce9d1f/generated_images/exec-271a8a45-4f22-4d60-acb0-9667831b0885.png",
+      "localPath": "assets/generated-v5/vaccination.png",
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    {
+      "key": "lab-tests",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Asset type: transparent PNG service illustration for a veterinarian's website. A single polished semi-realistic 3D editorial website service icon, isolated with a genuinely transparent background (alpha), no panel, no circular badge and no opaque backdrop. Adult, trustworthy veterinary care brand for a personal veterinarian in Belarus; elegant product-photography materials, matte white porcelain, deep navy and a restrained cobalt-blue detail (#2166db). Soft daylight from upper left, subtle contact shadow, near-front three-quarter view, compact balanced composition, object fully within frame with generous clear margins. A coherent family of icons: restrained, tactile, credible, clean silhouette readable at 100–150 pixels. No lettering, words, numerals, logos, watermark, medical cross, people or faces. No childish cartoon, no neon, no inflated emoji or toy look. Subject: two small laboratory sample tubes with blue and white screw caps in a compact low white tube holder, next to a small blank specimen container. Clear glass with a hint of blue reflections, no blood or body fluids visible, no text or measurement markings. Precisely three main vessels, clean believable laboratory objects.",
+      "sourcePath": "/workspace/scratch/969838ce9d1f/generated_images/exec-cc782103-6c87-4d3f-8fa8-ec440145f286.png",
+      "localPath": "assets/generated-v5/lab-tests.png",
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    {
+      "key": "treatment-care",
+      "transparent": true,
+      "prompt": "Use case: stylized-concept. Asset type: transparent PNG service illustration for a veterinarian's website. A single polished semi-realistic 3D editorial website service icon, isolated with a genuinely transparent background (alpha), no panel, no circular badge and no opaque backdrop. Adult, trustworthy veterinary care brand for a personal veterinarian in Belarus; elegant product-photography materials, matte white porcelain, deep navy and a restrained cobalt-blue detail (#2166db). Soft daylight from upper left, subtle contact shadow, near-front three-quarter view, compact balanced composition, object fully within frame with generous clear margins. A coherent family of icons: restrained, tactile, credible, clean silhouette readable at 100–150 pixels. No lettering, words, numerals, logos, watermark, medical cross, people or faces. No childish cartoon, no neon, no inflated emoji or toy look. Subject: a compact neatly rolled white veterinary gauze bandage, a folded dressing pad with one cobalt-blue fastening strip and a small unlabeled white medicine bottle with blue cap. Calm everyday treatment and aftercare. No wound, no blood, no sharp tools, no surplus objects.",
+      "sourcePath": "/workspace/scratch/969838ce9d1f/generated_images/exec-c07bc121-d75a-4c7d-b7f1-3caebc231667.png",
+      "localPath": "assets/generated-v5/treatment-care.png",
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    {
+      "key": "home-visit-banner",
+      "transparent": false,
+      "prompt": "Use case: photorealistic-natural. Asset type: wide hero photograph for an independent home-visit veterinarian website in Polotsk and Novopolotsk, Belarus. Create a photorealistic natural editorial scene, landscape composition about 16:9. A calm medium-sized golden retriever resting on a simple light gray couch at home; an adult veterinarian's hands, white sleeve and a small portion of navy-blue scrub sleeve gently hold a stethoscope against the dog's chest on the right side of the frame. The veterinarian's face and head are completely outside the image, no identity implied. Small tabby cat rests nearby at the far right, natural size and clear separate anatomy. Modest tidy contemporary apartment, soft overcast daylight, believable furniture, tactile fabric and real fur texture. This should feel like an ordinary Belarusian home visit, warm and competent, not a luxury clinic or an advertising showroom. Composition: animal and medical action in the right 55%; left 40% is softly defocused pale neutral wall with ample calm negative space for HTML text. Neutral white, cool blue and natural fur palette, avoid yellow lighting and orange color grade. No words, logos, captions, watermark, graphics or border. No ultrasound machine, no clinic signage, no posed human portrait. Anatomically correct dog, cat, hands and stethoscope, gentle relaxed handling, no visible distress.",
+      "sourcePath": "/workspace/scratch/969838ce9d1f/generated_images/exec-8fd99e51-264a-440e-86e0-84e1cfe07192.png",
+      "localPath": "assets/generated-v5/home-visit-banner.png",
+      "alphaRange": null
+    }
+  ]
+}

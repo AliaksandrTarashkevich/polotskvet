@@ -1,0 +1,125 @@
+{
+  "contextVersion": "1.3",
+  "updatedAt": "2026-11-13",
+  "projectStage": "red_design_approved_deployment_package",
+  "language": "ru",
+  "country": "BY",
+  "currency": "BYN",
+  "doctor": {
+    "fullName": "Роман Чертопалов",
+    "nameConfirmedByUser": true,
+    "photo": "assets/doctor-photos/web/roman-portrait.jpg",
+    "biography": "Ветеринарный врач с 8-летним опытом. Кардиолог, нефроуролог, специалист функциональной диагностики (УЗИ). Три года работы в клинике «Девять жизней» в Минске. Опыт исполнения обязанностей главного врача.",
+    "education": null,
+    "yearsOfExperience": 8,
+    "certificates": [],
+    "confirmedSpecializations": [
+      "Ветеринарная кардиология",
+      "Ветеринарная нефроурология",
+      "Функциональная диагностика (УЗИ)"
+    ],
+    "photos": [
+      "assets/doctor-photos/web/roman-portrait.jpg",
+      "assets/doctor-photos/web/roman-reading.jpg",
+      "assets/doctor-photos/web/roman-exam-dog.jpg",
+      "assets/doctor-photos/web/roman-diagnostics.jpg",
+      "assets/doctor-photos/web/roman-equipment.jpg"
+    ],
+    "workHistory": [
+      {
+        "organization": "Девять жизней",
+        "city": "Минск",
+        "durationYears": 3,
+        "exactDates": null
+      }
+    ],
+    "leadershipExperience": {
+      "role": "Исполняющий обязанности главного врача",
+      "organization": null,
+      "dates": null
+    },
+    "careApproach": [
+      "Pet-friendly приём",
+      "Доказательная медицина"
+    ],
+    "factsConfirmedBy": "Сообщение Романа, переданное Alex 13.11.2026, и прямое подтверждение Alex о роли и. о. главврача",
+    "photoUseAuthorizedByUser": true
+  },
+  "practice": {
+    "brandName": "ПолоцкВет",
+    "visitMode": "home_visits_and_online_consultations",
+    "officeAddress": null,
+    "publicClinicAffiliation": false,
+    "confirmedCities": [
+      "Полоцк",
+      "Новополоцк"
+    ],
+    "outsideCityCoverage": {
+      "description": "Полоцкий район и ближайшие населённые пункты; дальше по согласованию",
+      "fixedRadiusKm": null,
+      "servesEntireVitebskRegion": false
+    },
+    "species": [],
+    "suggestedSpeciesForDraft": [
+      "кошки",
+      "собаки"
+    ],
+    "phone": null,
+    "messengers": [],
+    "contactHours": null,
+    "visitHours": null,
+    "arrivalTimePromise": null,
+    "domain": null,
+    "priceList": [],
+    "reviews": [],
+    "businessProfileUrls": {
+      "google": null,
+      "yandex": null
+    },
+    "brandStatus": "working_name_from_meeting",
+    "domainCandidate": "polotskvet.by",
+    "domainTransliterationConfirmed": false,
+    "domainAvailabilityChecked": false,
+    "logoWordmark": "PolotskVet",
+    "logoApprovedByUser": true
+  },
+  "excludedServiceIds": [
+    "ultrasound_home_visit"
+  ],
+  "delivery": {
+    "preferredSourceHosting": "GitHub",
+    "preferredWebHosting": "Vercel",
+    "repositoryUrl": null,
+    "deploymentUrl": null,
+    "accessFromBelarusVerified": false,
+    "archiveRequested": true
+  },
+  "contentRules": {
+    "doNotInventMissingFacts": true,
+    "candidateServicesNeedDoctorConfirmation": true,
+    "medicalArticlesNeedDoctorReview": true,
+    "noPublicUseOfOtherClinicIdentity": true
+  },
+  "sourceMeeting": {
+    "title": "Медкарта и сайт ветеринара с Романом",
+    "date": "2026-11-13",
+    "onlineConsultationsConfirmed": true,
+    "homeServiceListPromisedLater": true,
+    "pricesPromisedLater": true,
+    "doctorPhotoPending": false,
+    "ambiguousTranscriptWordsAreNotServices": true
+  },
+  "specialtyAndServiceDistinction": "Специализация УЗИ подтверждена. Выездное УЗИ не добавлено в меню по прежнему ограничению; фактическая доступность требует отдельного подтверждения.",
+  "design": {
+    "selected": "white_red",
+    "selectedByUser": true,
+    "selectedDate": "2026-11-13",
+    "heroCaptionStyle": "unboxed_italic_serif",
+    "showHeroFactsRow": false,
+    "specializationsPresentation": "secondary_plain_text",
+    "servicesBeforeOnlineAndPrinciples": true,
+    "catMotion": "document_pointer_parallax",
+    "showDemoFooter": false,
+    "brandLogo": "assets/brand/polotskvet-logo.png"
+  }
+}
