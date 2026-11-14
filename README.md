@@ -22,6 +22,7 @@
 | `public/assets` | Логотип, фото, PNG-иллюстрации и локальные шрифты |
 | `public/concepts` | Пять черновых вариантов нового дизайна с переключалкой. Онлайн: https://polotskvet.vercel.app/concepts/. Локально: `python3 -m http.server 4173 --directory public`, затем `http://localhost:4173/concepts/` |
 | `design-assets/grade-photos.sh` | Рецепт выравнивания оттенков фотографий (ffmpeg); оригиналы не меняет |
+| `design-assets/stock` | Исходник стокового фото для кружков в вариантах 3 и 5 (Pexels; автор и лицензия в `ASSETS.json`) |
 | `design-assets` | Исходные PNG логотипа и сведения об ассетах |
 | `inputs` | Подтверждённые факты и статус услуг для дальнейшей работы; не автоматический источник страницы |
 | `docs/PROJECT_CONTEXT.md` | Актуальный контекст, ТЗ и следующие работы |

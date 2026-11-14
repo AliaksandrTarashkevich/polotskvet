@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-13",
+  "updatedAt": "2026-11-14",
   "doctorPhotos": {
     "source": "Five photographs supplied by Alex and confirmed as photographs of Roman Chertopalov.",
     "files": [
@@ -35,5 +35,21 @@
     "family": "Manrope",
     "license": "SIL Open Font License 1.1",
     "licenseFile": "public/assets/fonts/OFL.txt"
+  },
+  "stockPhotos": {
+    "source": "Pexels, under the Pexels License (https://www.pexels.com/license/): free commercial use and edits, attribution not required; people in the photo must not be presented as endorsing the practice.",
+    "files": [
+      {
+        "file": "public/concepts/photos/stock-frenchie.jpg",
+        "untouchedCrop": "public/concepts/photos/orig/stock-frenchie.jpg",
+        "original": "design-assets/stock/pexels-28644464.jpg",
+        "url": "https://www.pexels.com/photo/adorable-french-bulldog-puppy-at-veterinary-clinic-28644464/",
+        "author": "Sueda Güzeldere",
+        "chosenBy": "Alex, 2026-11-14, for the round photo in concepts 3 and 5",
+        "processing": "Square crop around the puppy, colour-matched to the doctor photos by design-assets/grade-photos.sh"
+      }
+    ],
+    "notRoman": true,
+    "rule": "Not a photo of Roman or his patient: never name Roman in its alt text or captions."
   }
 }

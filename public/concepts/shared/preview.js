@@ -124,7 +124,9 @@
   function applyPhotos(mode) {
     d.setAttribute('data-photos', mode);
     document.querySelectorAll('img[data-ph]').forEach(function (img) {
-      var want = (mode === 'orig' ? '../assets/doctor/' : 'photos/') + img.getAttribute('data-ph') + '.jpg';
+      var name = img.getAttribute('data-ph');
+      /* data-orig: the untouched version of a photo that does not live in assets/doctor (the stock puppy) */
+      var want = mode !== 'orig' ? 'photos/' + name + '.jpg' : (img.getAttribute('data-orig') || '../assets/doctor/' + name + '.jpg');
       if (img.getAttribute('src') !== want) img.setAttribute('src', want);
     });
     var label = '';

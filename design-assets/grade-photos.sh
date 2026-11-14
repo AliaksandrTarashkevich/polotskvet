@@ -29,3 +29,19 @@ for n in ${(k)F}; do
   ffmpeg -y -loglevel error -i "$SRC/$n.jpg" -vf "format=gbrp,${F[$n]},format=yuvj420p" -q:v 2 "$OUT/$n.jpg"
   echo "graded $n"
 done
+
+# Stock photo for the round crops in concepts 3 and 5, chosen by Alex on 14.11.2026:
+# Pexels 28644464 by Sueda Güzeldere (Pexels License), source kept in design-assets/stock/.
+# Square crop around the puppy, then matched to the doctor photos above: cream whites (Lab b* ≈ +4.5),
+# a neutral grey dog, skin hue ≈ 53° and chroma ≈ 24, blacks and highlights in the same range.
+# No eq here: it goes through YUV and pushes neutrals toward yellow-green, so gamma and saturation stay in RGB.
+STOCK_SRC=design-assets/stock/pexels-28644464.jpg
+STOCK_CROP="crop=1080:1080:30:50,scale=900:900:flags=lanczos"
+STOCK_GRADE="curves=r='0/0 0.4/0.406 0.5/0.506 0.85/0.882 1/1':g='0/0 0.4/0.396 0.85/0.838 1/0.985':b='0/0 0.4/0.397 0.5/0.492 0.7/0.648 0.85/0.755 1/0.89'"
+STOCK_GRADE+=",colorlevels=rimin=0.005:gimin=0.005:bimin=0.005:rimax=0.93:gimax=0.93:bimax=0.93,selectivecolor=yellows='0 0 -0.05 0'"
+STOCK_GRADE+=",lutrgb=r='gammaval(1.2)':g='gammaval(1.2)':b='gammaval(1.2)'"
+STOCK_GRADE+=",colorchannelmixer=rr=0.76378:rg=0.21456:rb=0.02166:gr=0.06378:gg=0.91456:gb=0.02166:br=0.06378:bg=0.21456:bb=0.72166"
+mkdir -p "$OUT/orig"
+ffmpeg -y -loglevel error -i "$STOCK_SRC" -vf "$STOCK_CROP" -q:v 3 "$OUT/orig/stock-frenchie.jpg"
+ffmpeg -y -loglevel error -i "$STOCK_SRC" -vf "$STOCK_CROP,format=gbrp,$STOCK_GRADE,format=yuvj420p" -q:v 3 "$OUT/stock-frenchie.jpg"
+echo "graded stock-frenchie (ungraded crop in $OUT/orig/ for the photo switcher)"

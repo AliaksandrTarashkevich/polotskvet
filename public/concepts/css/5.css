@@ -48,7 +48,7 @@ h3{font-size:1.3rem;font-weight:800;line-height:1.2;letter-spacing:-.01em}
 .blob{position:relative;aspect-ratio:1/1.08;overflow:hidden;border-radius:61% 39% 52% 48%/47% 55% 45% 53%;background:var(--paper-2)}
 .blob img{position:absolute;left:-2%;top:-6%;width:130%;max-width:none}
 .circle{position:absolute;left:-9%;bottom:-7%;overflow:hidden;width:44%;aspect-ratio:1;border:8px solid var(--paper);border-radius:50%;background:var(--paper-2)}
-.circle img{position:absolute;left:-18.75%;top:-166.7%;width:150%;max-width:none}
+.circle img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .sticker{position:absolute;padding:10px 18px;border-radius:999px;font-weight:800;font-size:.95rem;white-space:nowrap;box-shadow:0 10px 22px -12px rgba(0,0,0,.45)}
 .s1{top:6%;left:-7%;background:var(--brand);color:var(--on-brand);rotate:-8deg}
 .s2{right:-4%;bottom:16%;background:var(--card);color:var(--ink);rotate:6deg}
