@@ -1,9 +1,12 @@
-/* Preview bar: switch between the five layouts, try any palette on any layout,
+/* Preview bar: switch between the five layouts and the 1+ assembly, try any palette on any layout,
    compare photo treatments. Throwaway — not part of the future site. */
 (function () {
   var d = document.documentElement;
   var layout = d.getAttribute('data-layout') || '1';
-  var LAYOUTS = [['1', 'Тёплый приём'], ['2', 'Кардиограмма'], ['3', 'Сервис'], ['4', 'Портрет'], ['5', 'Питомец дома']];
+  /* data-base: the layout a derived page takes its own palette from (1+ is built on 1) */
+  var base = d.getAttribute('data-base') || layout;
+  /* [file, name, tab label, key]; label and key default to the file name */
+  var LAYOUTS = [['1', 'Тёплый приём'], ['1plus', 'Сборка', '1+', '+'], ['2', 'Кардиограмма'], ['3', 'Сервис'], ['4', 'Портрет'], ['5', 'Питомец дома']];
   var PALETTES = [
     ['1', 'Тёплая бумага', '#F7F1E6', '#3A2B22', '#C22A3F'],
     ['2', 'Клиника', '#FFFFFF', '#0F2240', '#D22B40'],
@@ -34,8 +37,8 @@
   LAYOUTS.forEach(function (item) {
     var a = el('a', 'pv-tab');
     a.href = item[0] + '.html';
-    a.title = item[1] + ' (клавиша ' + item[0] + ')';
-    a.appendChild(el('b', null, item[0]));
+    a.title = item[1] + ' (клавиша ' + (item[3] || item[0]) + ')';
+    a.appendChild(el('b', null, item[2] || item[0]));
     a.appendChild(el('span', null, item[1]));
     if (item[0] === layout) a.setAttribute('aria-current', 'page');
     gLayouts.appendChild(a);
@@ -48,12 +51,12 @@
   var swatches = PALETTES.map(function (p) {
     var b = el('button', 'pv-sw');
     b.type = 'button';
-    b.title = p[1] + (p[0] === layout ? ' — родная для этого варианта' : '');
+    b.title = p[1] + (p[0] === base ? ' — родная для этого варианта' : '');
     b.setAttribute('aria-label', 'Палитра: ' + p[1]);
     b.style.setProperty('--a', p[2]);
     b.style.setProperty('--b', p[3]);
     b.style.setProperty('--c', p[4]);
-    if (p[0] === layout) b.setAttribute('data-native', '');
+    if (p[0] === base) b.setAttribute('data-native', '');
     b.addEventListener('click', function () { setPalette(p[0]); });
     gPalettes.appendChild(b);
     return [p[0], b];
@@ -87,7 +90,7 @@
   reset.setAttribute('data-act', 'reset');
   reset.addEventListener('click', function () {
     store('pv-palette', null); store('pv-photos', null);
-    applyPalette(layout); applyPhotos(nativePhotos);
+    applyPalette(base); applyPhotos(nativePhotos);
   });
   var hide = el('button', 'pv-ic', '×');
   hide.type = 'button';
@@ -118,7 +121,7 @@
     swatches.forEach(function (s) { s[1].setAttribute('aria-pressed', String(s[0] === id)); });
   }
   function setPalette(id) {
-    store('pv-palette', id === layout ? null : id);
+    store('pv-palette', id === base ? null : id);
     applyPalette(id);
   }
   function applyPhotos(mode) {
@@ -152,23 +155,28 @@
     setPalette(PALETTES[(i + 1) % PALETTES.length][0]);
   }
 
-  applyPalette(d.getAttribute('data-palette') || layout);
+  applyPalette(d.getAttribute('data-palette') || base);
   applyPhotos(d.getAttribute('data-photos') || nativePhotos);
   syncHeight();
   if ('ResizeObserver' in window) new ResizeObserver(syncHeight).observe(bar);
   window.addEventListener('resize', syncHeight);
 
-  /* keys: 1–5 layouts, ←/→ previous/next, P palette, F photos, H hide */
+  /* keys: 1–5 layouts, + the 1+ assembly, ←/→ previous/next in bar order, P palette, F photos, H hide */
   document.addEventListener('keydown', function (e) {
     if (e.metaKey || e.ctrlKey || e.altKey) return;
     var t = e.target;
     if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
     if (document.querySelector('dialog[open]')) return;
-    var k = e.key;
-    if (k >= '1' && k <= '5') { if (k !== layout) location.href = k + '.html'; return; }
-    var n = Number(layout);
-    if (k === 'ArrowRight' && !(t && t.getAttribute && t.getAttribute('role') === 'tab')) location.href = (n % 5 + 1) + '.html';
-    else if (k === 'ArrowLeft' && !(t && t.getAttribute && t.getAttribute('role') === 'tab')) location.href = ((n + 3) % 5 + 1) + '.html';
+    var k = e.key === '=' ? '+' : e.key;
+    var go = null, at = 0, count = LAYOUTS.length;
+    LAYOUTS.forEach(function (item, i) {
+      if (k === (item[3] || item[0])) go = item[0];
+      if (item[0] === layout) at = i;
+    });
+    if (go) { if (go !== layout) location.href = go + '.html'; return; }
+    var onTab = t && t.getAttribute && t.getAttribute('role') === 'tab';
+    if (k === 'ArrowRight' && !onTab) location.href = LAYOUTS[(at + 1) % count][0] + '.html';
+    else if (k === 'ArrowLeft' && !onTab) location.href = LAYOUTS[(at + count - 1) % count][0] + '.html';
     else if (k === 'p' || k === 'P' || k === 'з' || k === 'З') nextPalette();
     else if (k === 'f' || k === 'F' || k === 'а' || k === 'А') nextPhotos();
     else if (k === 'h' || k === 'H' || k === 'р' || k === 'Р') setHidden(!d.classList.contains('pv-off'));

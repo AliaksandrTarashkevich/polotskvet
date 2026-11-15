@@ -20,7 +20,7 @@
 | `public/styles.css` | Оформление и адаптация |
 | `public/app.js` | Меню, окно записи, анимации |
 | `public/assets` | Логотип, фото, PNG-иллюстрации и локальные шрифты |
-| `public/concepts` | Пять черновых вариантов нового дизайна с переключалкой. Онлайн: https://polotskvet.vercel.app/concepts/. Локально: `python3 -m http.server 4173 --directory public`, затем `http://localhost:4173/concepts/` |
+| `public/concepts` | Пять черновых вариантов нового дизайна и сборка «1+» (вариант 1 с кусками из 3, 4 и 5, выбран 15.11.2026) с переключалкой. Онлайн: https://polotskvet.vercel.app/concepts/1plus. Локально: `python3 -m http.server 4173 --directory public`, затем `http://localhost:4173/concepts/1plus.html` |
 | `design-assets/grade-photos.sh` | Рецепт выравнивания оттенков фотографий (ffmpeg); оригиналы не меняет |
 | `design-assets/stock` | Исходник стокового фото для кружков в вариантах 3 и 5 (Pexels; автор и лицензия в `ASSETS.json`) |
 | `design-assets` | Исходные PNG логотипа и сведения об ассетах |

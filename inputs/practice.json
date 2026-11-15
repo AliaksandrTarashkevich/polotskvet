@@ -1,6 +1,6 @@
 {
   "contextVersion": "1.3",
-  "updatedAt": "2026-11-13",
+  "updatedAt": "2026-11-15",
   "projectStage": "red_design_approved_deployment_package",
   "language": "ru",
   "country": "BY",
@@ -18,6 +18,12 @@
       "Ветеринарная нефроурология",
       "Функциональная диагностика (УЗИ)"
     ],
+    "broadProfile": {
+      "therapy": true,
+      "source": "Alex, 15.11.2026: «Рома врач большого профиля», попросил добавить терапию к профилям",
+      "fifthProfile": null,
+      "fifthProfileNote": "Alex хочет пять профилей, но пятый не назвал — не придумывать"
+    },
     "photos": [
       "assets/doctor-photos/web/roman-portrait.jpg",
       "assets/doctor-photos/web/roman-reading.jpg",
@@ -81,7 +87,14 @@
     "domainTransliterationConfirmed": false,
     "domainAvailabilityChecked": false,
     "logoWordmark": "PolotskVet",
-    "logoApprovedByUser": true
+    "logoApprovedByUser": true,
+    "substituteDoctor": {
+      "mayVisitWhenRomanBusy": true,
+      "name": null,
+      "qualification": null,
+      "source": "Alex, 15.11.2026: если Роман занят, может приехать другой врач; в планах ещё один врач, возможно больше",
+      "publicWording": "Если Роман занят, к вам может приехать другой ветеринарный врач. Кто приедет, согласуем при записи."
+    }
   },
   "excludedServiceIds": [
     "ultrasound_home_visit"
@@ -122,11 +135,20 @@
     "showDemoFooter": false,
     "brandLogo": "assets/brand/polotskvet-logo.png",
     "redesign": {
-      "status": "five_concepts_awaiting_choice",
+      "status": "direction_chosen_assembly_in_review",
       "startedDate": "2026-11-13",
       "fixedByUser": ["logo"],
       "conceptsPath": "public/concepts/",
       "previewUrl": "https://polotskvet.vercel.app/concepts/",
+      "chosenDate": "2026-11-15",
+      "chosenBase": "concept 1 «Тёплый приём» (fonts, palette 1, copy, section order)",
+      "borrowed": [
+        "concept 3: hero photo in a rounded rectangle with the «8 лет практики» chip instead of the arch",
+        "concept 4: dark running band with specialties and towns",
+        "concept 5: card blocks and the doctor description next to a polaroid photo"
+      ],
+      "assemblyPath": "public/concepts/1plus.html",
+      "assemblyUrl": "https://polotskvet.vercel.app/concepts/1plus",
       "note": "Поля выше описывают прежнюю красно-белую версию, которая остаётся на основной странице до выбора нового направления."
     }
   }
