@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru" data-layout="1plus" data-base="1" data-palettes="1 red terra green blue plum">
+<html lang="ru" data-layout="1plus" data-base="1" data-palettes="1 red terra green blue plum" data-styles="calm bold play mag">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -10,10 +10,11 @@
 <script src="shared/preview-head.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Golos+Text:wght@400..700&family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared/palettes.css">
 <link rel="stylesheet" href="shared/base.css">
 <link rel="stylesheet" href="css/1plus.css">
+<link rel="stylesheet" href="css/1plus-styles.css">
 <script src="shared/site.js" defer></script>
 <script src="shared/preview.js" defer></script>
 </head>
@@ -53,6 +54,14 @@
       <img data-ph="roman-portrait" src="photos/roman-portrait.jpg" alt="Ветеринарный врач Роман Чертопалов со стетоскопом и медицинской сумкой" width="853" height="1280" fetchpriority="high">
       <span class="chip">8 лет практики</span>
       <figcaption><b>Роман Чертопалов</b><span>ветеринарный врач</span></figcaption>
+      <svg class="stamp" viewBox="0 0 120 120" aria-hidden="true">
+        <circle cx="60" cy="60" r="58" fill="currentColor"/>
+        <g class="ring">
+          <path id="stamp-ring" d="M60 60m-43 0a43 43 0 1 1 86 0a43 43 0 1 1-86 0" fill="none"/>
+          <text><textPath href="#stamp-ring">8 лет практики · выезд на дом · </textPath></text>
+        </g>
+        <g class="paw"><ellipse cx="47" cy="57" rx="4.6" ry="5.8"/><ellipse cx="55.5" cy="49" rx="4.6" ry="5.8"/><ellipse cx="64.5" cy="49" rx="4.6" ry="5.8"/><ellipse cx="73" cy="57" rx="4.6" ry="5.8"/><path d="M60 59c-7 0-12 6-12 11 0 4 3 6 6.5 6 2 0 3.5-1.4 5.5-1.4s3.5 1.4 5.5 1.4c3.5 0 6.5-2 6.5-6 0-5-5-11-12-11z"/></g>
+      </svg>
     </figure>
   </section>
 
@@ -205,6 +214,12 @@
   </section>
 
   <section class="contact wrap" id="contact" data-rv>
+    <svg class="peek" viewBox="0 0 120 74" aria-hidden="true">
+      <path fill="currentColor" d="M14 74V46c0-16 6-24 14-28L24 2l18 11c5-2 11-3 18-3s13 1 18 3L96 2l-4 16c8 4 14 12 14 28v28z"/>
+      <ellipse cx="45" cy="44" rx="9" ry="10" fill="#fff"/><ellipse cx="75" cy="44" rx="9" ry="10" fill="#fff"/>
+      <circle class="pupil" cx="45" cy="45" r="4.6" fill="#1B1B1B"/><circle class="pupil" cx="75" cy="45" r="4.6" fill="#1B1B1B"/>
+      <path d="M55 57l5 3.5 5-3.5" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
     <div>
       <h2>Расскажите, что беспокоит <em>питомца</em></h2>
       <p>Назовите город и&nbsp;адрес, возраст животного и&nbsp;причину обращения. Обсудим, подходит&nbsp;ли выезд или лучше начать с&nbsp;онлайн-консультации.</p>
@@ -227,6 +242,23 @@
   <button class="m1" type="button" data-contact="Звонок">Позвонить</button>
   <button class="m2" type="button" data-contact="Сообщение">Написать</button>
 </div>
+
+<script>
+/* «Игриво»: the cat over the contact block follows the pointer with its eyes (mouse only, not with reduced motion) */
+(function () {
+  var d = document.documentElement, peek = document.querySelector('.peek');
+  if (!peek || !window.matchMedia || !matchMedia('(pointer:fine)').matches || matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  var pupils = peek.querySelectorAll('.pupil');
+  addEventListener('pointermove', function (e) {
+    if (d.getAttribute('data-style') !== 'play') return;
+    var r = peek.getBoundingClientRect(), k = r.width / 120;
+    pupils.forEach(function (p) {
+      var a = Math.atan2(e.clientY - (r.top + p.cy.baseVal.value * k), e.clientX - (r.left + p.cx.baseVal.value * k));
+      p.setAttribute('transform', 'translate(' + (Math.cos(a) * 3.6).toFixed(2) + ' ' + (Math.sin(a) * 3.6).toFixed(2) + ')');
+    });
+  }, { passive: true });
+})();
+</script>
 
 </body>
 </html>

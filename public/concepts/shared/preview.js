@@ -89,16 +89,38 @@
   gPhotos.appendChild(cycle);
   bar.appendChild(gPhotos);
 
+  /* styles (1+ only): the same page in other visual directions, on its own row */
+  var STYLE_NAMES = { calm: 'Спокойно', bold: 'Смело', play: 'Игриво', mag: 'Журнал' };
+  var styles = (d.getAttribute('data-styles') || '').split(' ').filter(Boolean);
+  var styleBtns = [];
+  if (styles.length) {
+    bar.classList.add('has-styles');
+    var gStyles = el('div', 'pv-g pv-styles');
+    gStyles.appendChild(el('span', 'pv-l', 'Стиль'));
+    var sseg = el('div', 'pv-sseg');
+    styles.forEach(function (s) {
+      var b = el('button', null, STYLE_NAMES[s] || s);
+      b.type = 'button';
+      b.title = (STYLE_NAMES[s] || s) + ' (клавиша S — следующий)';
+      b.addEventListener('click', function () { setStyle(s); });
+      sseg.appendChild(b);
+      styleBtns.push([s, b]);
+    });
+    gStyles.appendChild(sseg);
+    bar.appendChild(gStyles);
+  }
+
   /* tools */
   var tools = el('div', 'pv-tools');
   var reset = el('button', 'pv-ic', '↺');
   reset.type = 'button';
-  reset.title = 'Вернуть родную палитру и фото';
+  reset.title = styles.length ? 'Вернуть родную палитру, фото и стиль' : 'Вернуть родную палитру и фото';
   reset.setAttribute('aria-label', reset.title);
   reset.setAttribute('data-act', 'reset');
   reset.addEventListener('click', function () {
-    store('pv-palette', null); store('pv-photos', null);
+    store('pv-palette', null); store('pv-photos', null); store('pv-style', null);
     applyPalette(base); applyPhotos(nativePhotos);
+    if (styles.length) applyStyle(styles[0]);
   });
   var hide = el('button', 'pv-ic', '×');
   hide.type = 'button';
@@ -163,8 +185,23 @@
     setPalette(SHOWN[(i + 1) % SHOWN.length][0]);
   }
 
+  function applyStyle(s) {
+    d.setAttribute('data-style', s);
+    styleBtns.forEach(function (p) { p[1].setAttribute('aria-pressed', String(p[0] === s)); });
+  }
+  function setStyle(s) {
+    store('pv-style', s === styles[0] ? null : s);
+    applyStyle(s);
+  }
+  function nextStyle() {
+    if (!styles.length) return;
+    var i = styles.indexOf(d.getAttribute('data-style'));
+    setStyle(styles[(i + 1) % styles.length]);
+  }
+
   applyPalette(d.getAttribute('data-palette') || base);
   applyPhotos(d.getAttribute('data-photos') || nativePhotos);
+  if (styles.length) applyStyle(d.getAttribute('data-style') || styles[0]);
   syncHeight();
   if ('ResizeObserver' in window) new ResizeObserver(syncHeight).observe(bar);
   window.addEventListener('resize', syncHeight);
@@ -187,6 +224,7 @@
     else if (k === 'ArrowLeft' && !onTab) location.href = LAYOUTS[(at + count - 1) % count][0] + '.html';
     else if (k === 'p' || k === 'P' || k === 'з' || k === 'З') nextPalette();
     else if (k === 'f' || k === 'F' || k === 'а' || k === 'А') nextPhotos();
+    else if (k === 's' || k === 'S' || k === 'ы' || k === 'Ы') nextStyle();
     else if (k === 'h' || k === 'H' || k === 'р' || k === 'Р') setHidden(!d.classList.contains('pv-off'));
   });
 })();

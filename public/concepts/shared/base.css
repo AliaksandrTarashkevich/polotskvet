@@ -116,5 +116,15 @@ dialog.cd::backdrop{background:rgba(10,12,16,.52);-webkit-backdrop-filter:blur(3
   .pv-tab{padding:0 9px}
   .pv-ic[data-act="reset"]{display:none}
 }
+/* style switcher (1+ only): a row of its own under the bar, so the widths measured above still hold */
+.pv.has-styles{flex-wrap:wrap;row-gap:0}
+.pv-styles{order:9;flex:1 1 100%;padding:0 0 8px}
+.pv .pv-styles .pv-l{display:inline}
+.pv-sseg{display:flex;padding:3px;border-radius:9px;background:#262A33}
+.pv-sseg button{height:24px;padding:0 12px;border-radius:6px;color:#C9CCD4;font-size:12.5px}
+.pv-sseg button:hover{color:#fff}
+.pv-sseg button[aria-pressed="true"]{background:#fff;color:#15171C}
+@media (max-width:760px){.pv-styles{padding:0}.pv-sseg button{padding:0 10px}}
+@media (max-width:359px){.pv .pv-styles .pv-l{display:none}.pv-sseg button{padding:0 8px}}
 /* narrowest phones: six tabs and the close button share the first row */
 @media (max-width:359px){.pv-layouts{gap:3px}.pv-tab{padding:0 7px}}

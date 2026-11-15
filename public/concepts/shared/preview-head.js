@@ -20,8 +20,17 @@
   /* data-base: the layout a derived page takes its own palette from (1+ is built on 1) */
   d.setAttribute('data-palette', palette || d.getAttribute('data-base') || layout);
   d.setAttribute('data-photos', photos || nativePhotos);
+  /* data-styles: visual styles a page offers (1+), the first is its own; a link can pin one: 1plus.html?s=bold */
+  var styles = (d.getAttribute('data-styles') || '').split(' ').filter(Boolean);
+  if (styles.length) {
+    var style = null, qs = /[?&]s=([a-z]+)\b/.exec(location.search);
+    try { style = localStorage.getItem('pv-style'); } catch (e) {}
+    if (qs) style = qs[1];
+    d.setAttribute('data-style', styles.indexOf(style) > -1 ? style : styles[0]);
+  }
   d.classList.add('js');
   if (hidden) d.classList.add('pv-off');
   var narrow = window.matchMedia && window.matchMedia('(max-width:760px)').matches;
-  d.style.setProperty('--pv-h', hidden ? '0px' : (narrow ? '84px' : '46px'));
+  /* a first guess before the bar exists; preview.js measures the real height */
+  d.style.setProperty('--pv-h', hidden ? '0px' : styles.length ? (narrow ? '118px' : '84px') : (narrow ? '84px' : '46px'));
 })();
