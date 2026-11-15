@@ -1,6 +1,7 @@
 /* PolotskVet — concept palettes (throwaway preview).
    Every layout reads only these tokens, so any palette can be tried on any layout.
-   The logo is never recoloured: each palette is built so the red paw sits comfortably on --paper. */
+   The logo is not recoloured in these previews: each palette is built so the red paw sits comfortably on --paper.
+   (15.11.2026 Alex said the logo may change later, e.g. to follow the chosen colour.) */
 
 :root{--photo:none}
 
@@ -33,6 +34,31 @@
   --paper:#FFF5EC;--paper-2:#FDE6D6;--card:#FFFFFF;--ink:#33202E;--ink-2:#775E6B;--line:#F1D6C4;
   --brand:#46263D;--on-brand:#FFF1E5;--on-brand-2:#D5B5C6;--tint:#EDE4F6;
   --cta:#CC2F45;--on-cta:#FFFFFF;--cta-inv:#FFC2A8;--on-cta-inv:#33202E;--signal:#E04A5A}
+
+/* One-colour palettes, shown on 1+ (15.11.2026: Alex found palette 1 too many colours and asked for one colour).
+   One hue at three strengths: light tints for panels and cards, the middle tone for buttons, icons and notes,
+   the deep tone for the band and dark blocks; near-white paper and near-black ink of the same hue.
+   Text pairs checked against WCAG AA: ink-2 on every surface, buttons, notes, text on the dark blocks. */
+:root[data-palette="red"]{
+  --paper:#FAF6F4;--paper-2:#F5E7E4;--card:#FFFFFF;--ink:#2A1519;--ink-2:#6C5257;--line:#E9D6D3;
+  --brand:#5A1424;--on-brand:#FAF6F4;--on-brand-2:#E3BCC3;--tint:#F0DBD8;
+  --cta:#B42238;--on-cta:#FFFFFF;--cta-inv:#FAF6F4;--on-cta-inv:#2A1519;--signal:#F0566C}
+:root[data-palette="terra"]{
+  --paper:#FBF6F1;--paper-2:#F5E8DC;--card:#FFFFFF;--ink:#2B1B12;--ink-2:#6B5446;--line:#EAD9C9;
+  --brand:#552612;--on-brand:#FBF6F1;--on-brand-2:#E6C4AE;--tint:#F1DFCE;
+  --cta:#A84A1C;--on-cta:#FFFFFF;--cta-inv:#FBF6F1;--on-cta-inv:#2B1B12;--signal:#EE8352}
+:root[data-palette="green"]{
+  --paper:#F5F7F2;--paper-2:#E7EFE8;--card:#FFFFFF;--ink:#12241B;--ink-2:#4A5F54;--line:#D5E1D8;
+  --brand:#0F3B2B;--on-brand:#F5F7F2;--on-brand-2:#B3D0C1;--tint:#DCEAE0;
+  --cta:#1B6A4C;--on-cta:#FFFFFF;--cta-inv:#F5F7F2;--on-cta-inv:#12241B;--signal:#4CB487}
+:root[data-palette="blue"]{
+  --paper:#F5F7FB;--paper-2:#E8EEF7;--card:#FFFFFF;--ink:#111A2B;--ink-2:#4A586D;--line:#D6DEEB;
+  --brand:#0F2753;--on-brand:#F5F7FB;--on-brand-2:#B6C6E3;--tint:#DFE7F4;
+  --cta:#2451A6;--on-cta:#FFFFFF;--cta-inv:#F5F7FB;--on-cta-inv:#111A2B;--signal:#5B8FF0}
+:root[data-palette="plum"]{
+  --paper:#FAF6F9;--paper-2:#F2E6EF;--card:#FFFFFF;--ink:#26141F;--ink-2:#634E5B;--line:#E5D4DF;
+  --brand:#3D1536;--on-brand:#FAF6F9;--on-brand-2:#DCBCD4;--tint:#ECDDE8;
+  --cta:#7A2C69;--on-cta:#FFFFFF;--cta-inv:#FAF6F9;--on-cta-inv:#26141F;--signal:#CF63B6}
 
 /* Photo modes (the colour-matched files are the default; "orig" swaps the files in preview.js) */
 :root[data-photos="muted"]{--photo:saturate(.5) sepia(.14) contrast(1.04)}

@@ -12,8 +12,16 @@
     ['2', 'Клиника', '#FFFFFF', '#0F2240', '#D22B40'],
     ['3', 'Петроль', '#F6F2EA', '#0E4A4C', '#D9483B'],
     ['4', 'Чёрно-белая', '#F4F3EF', '#121212', '#C8283E'],
-    ['5', 'Персик и слива', '#FFF5EC', '#46263D', '#CC2F45']
+    ['5', 'Персик и слива', '#FFF5EC', '#46263D', '#CC2F45'],
+    ['red', 'Один цвет: красный', '#FAF6F4', '#5A1424', '#B42238'],
+    ['terra', 'Один цвет: терракота', '#FBF6F1', '#552612', '#A84A1C'],
+    ['green', 'Один цвет: изумруд', '#F5F7F2', '#0F3B2B', '#1B6A4C'],
+    ['blue', 'Один цвет: синий', '#F5F7FB', '#0F2753', '#2451A6'],
+    ['plum', 'Один цвет: слива', '#FAF6F9', '#3D1536', '#7A2C69']
   ];
+  /* data-palettes: the palette ids this page offers (1+ offers palette 1 and the one-colour set) */
+  var offered = (d.getAttribute('data-palettes') || '1 2 3 4 5').split(' ');
+  var SHOWN = PALETTES.filter(function (p) { return offered.indexOf(p[0]) > -1; });
   var PHOTOS = [['orig', 'Исходные'], ['graded', 'Выровненные'], ['muted', 'Приглушённые'], ['bw', 'Ч/б']];
   var nativePhotos = layout === '4' ? 'bw' : 'graded';
 
@@ -48,7 +56,7 @@
   /* palettes */
   var gPalettes = el('div', 'pv-g pv-palettes');
   gPalettes.appendChild(el('span', 'pv-l', 'Палитра'));
-  var swatches = PALETTES.map(function (p) {
+  var swatches = SHOWN.map(function (p) {
     var b = el('button', 'pv-sw');
     b.type = 'button';
     b.title = p[1] + (p[0] === base ? ' — родная для этого варианта' : '');
@@ -151,8 +159,8 @@
   }
   function nextPalette() {
     var cur = d.getAttribute('data-palette'), i = 0;
-    PALETTES.forEach(function (p, n) { if (p[0] === cur) i = n; });
-    setPalette(PALETTES[(i + 1) % PALETTES.length][0]);
+    SHOWN.forEach(function (p, n) { if (p[0] === cur) i = n; });
+    setPalette(SHOWN[(i + 1) % SHOWN.length][0]);
   }
 
   applyPalette(d.getAttribute('data-palette') || base);
