@@ -45,3 +45,20 @@ mkdir -p "$OUT/orig"
 ffmpeg -y -loglevel error -i "$STOCK_SRC" -vf "$STOCK_CROP" -q:v 3 "$OUT/orig/stock-frenchie.jpg"
 ffmpeg -y -loglevel error -i "$STOCK_SRC" -vf "$STOCK_CROP,format=gbrp,$STOCK_GRADE,format=yuvj420p" -q:v 3 "$OUT/stock-frenchie.jpg"
 echo "graded stock-frenchie (ungraded crop in $OUT/orig/ for the photo switcher)"
+
+# Generated home-visit photos for 1+, made by Alex in ChatGPT from docs/chatgpt-photo-brief.md on 15.11.2026
+# (sources in design-assets/generated/). Illustrations: not Roman and not his patients.
+# Measured against the series: the ginger-cat frame was dark and yellow (luma p50 94, forearm skin hue 67°),
+# the tabby frame slightly dark with cool whites. A tone curve lifts the midtones to the series (p50 ≈ 150,
+# p95 ≈ 220), a luma-weighted matrix takes back the saturation the curve adds, highlights and shadows are
+# warmed a touch so whites read cream (b* ≈ +2…+5) and blacks neutral. Exported at q 5 to keep them light.
+desat(){ local s=$1 k; k=$((1 - s)); printf 'colorchannelmixer=rr=%.4f:rg=%.4f:rb=%.4f:gr=%.4f:gg=%.4f:gb=%.4f:br=%.4f:bg=%.4f:bb=%.4f' \
+  $((0.2126*k+s)) $((0.7152*k)) $((0.0722*k)) $((0.2126*k)) $((0.7152*k+s)) $((0.0722*k)) $((0.2126*k)) $((0.7152*k)) $((0.0722*k+s)); }
+typeset -A G
+G[gen-cat-ear]="curves=all='0/0 0.1/0.09 0.37/0.6 0.72/0.87 0.85/0.93 1/1',$(desat 0.70),curves=r='0/0 0.8/0.81 1/1':b='0/0 0.8/0.775 1/0.975',colorlevels=bimin=0.012,selectivecolor=reds='0 0.06 -0.04 0':yellows='0 0.10 -0.12 0'"
+G[gen-cat-steth]="curves=all='0/0 0.1/0.095 0.54/0.6 0.85/0.88 1/1',$(desat 0.88),curves=r='0/0 0.8/0.812 1/1':b='0/0 0.8/0.78 1/0.975',colorlevels=bimin=0.008"
+for n in ${(k)G}; do
+  ffmpeg -y -loglevel error -i "design-assets/generated/$n.webp" -q:v 5 "$OUT/orig/$n.jpg"
+  ffmpeg -y -loglevel error -i "design-assets/generated/$n.webp" -vf "format=gbrp,${G[$n]},format=yuvj420p" -q:v 5 "$OUT/$n.jpg"
+  echo "graded $n (ungraded copy in $OUT/orig/)"
+done

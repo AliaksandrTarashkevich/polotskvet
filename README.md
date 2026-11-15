@@ -23,6 +23,7 @@
 | `public/concepts` | Пять черновых вариантов нового дизайна и сборка «1+» (вариант 1 с кусками из 3, 4 и 5, выбран 15.11.2026) с переключалкой. Онлайн: https://polotskvet.vercel.app/concepts/1plus. Локально: `python3 -m http.server 4173 --directory public`, затем `http://localhost:4173/concepts/1plus.html` |
 | `design-assets/grade-photos.sh` | Рецепт выравнивания оттенков фотографий (ffmpeg); оригиналы не меняет |
 | `design-assets/stock` | Исходник стокового фото для кружков в вариантах 3 и 5 (Pexels; автор и лицензия в `ASSETS.json`) |
+| `design-assets/generated` | Исходники сгенерированных фото для «1+» (ChatGPT, руки ветеринара с кошками); бриф — `docs/chatgpt-photo-brief.md` |
 | `design-assets` | Исходные PNG логотипа и сведения об ассетах |
 | `inputs` | Подтверждённые факты и статус услуг для дальнейшей работы; не автоматический источник страницы |
 | `docs/PROJECT_CONTEXT.md` | Актуальный контекст, ТЗ и следующие работы |
