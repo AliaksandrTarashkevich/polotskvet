@@ -21,8 +21,9 @@
     "broadProfile": {
       "therapy": true,
       "source": "Alex, 15.11.2026: «Рома врач большого профиля», попросил добавить терапию к профилям",
-      "fifthProfile": null,
-      "fifthProfileNote": "Alex хочет пять профилей, но пятый не назвал — не придумывать"
+      "fifthProfile": "Профилактика",
+      "fifthProfileNote": "Alex попросил пять профилей и выбрать пятый самому (15.11.2026). Профилактика (прививки, плановые осмотры) — часть общей практики, уже есть в услугах. Подтвердить у Романа до запуска.",
+      "fifthProfileConfirmedByDoctor": false
     },
     "photos": [
       "assets/doctor-photos/web/roman-portrait.jpg",

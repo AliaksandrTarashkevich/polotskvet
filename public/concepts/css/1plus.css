@@ -42,7 +42,7 @@ h1 em,h2 em,.statement em{font-style:italic;font-weight:400;color:var(--cta)}
 .facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:52px;border-top:1px solid var(--line)}
 .facts div{padding:18px 18px 0 0}
 .facts div+div{padding-left:18px;border-left:1px solid var(--line)}
-.facts dt{font:500 1.75rem/1.1 var(--serif);letter-spacing:-.01em}
+.facts dt{font:500 1.75rem/1.1 var(--serif);letter-spacing:-.01em;white-space:nowrap}
 .facts dd{margin-top:6px;font-size:.88rem;line-height:1.4;color:var(--ink-2)}
 /* the framed photo from 3: a tall rounded rectangle instead of the arch, a chip on top, the name on frosted glass */
 .hero-photo{position:relative;justify-self:end;width:min(100%,440px);aspect-ratio:16/25;overflow:hidden;border-radius:28px;background:var(--paper-2)}
@@ -160,6 +160,11 @@ h1 em,h2 em,.statement em{font-style:italic;font-weight:400;color:var(--cta)}
 /* footer */
 .ft{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 24px;padding-block:20px 40px;font-size:.88rem;color:var(--ink-2)}
 
+/* «5 профилей» needs ~165px at the full size; the fact columns are narrower than that below ~1280px */
+@media (max-width:1279px){
+  .facts dt{font-size:1.45rem}
+}
+
 @media (max-width:1060px){
   .grid{grid-template-columns:repeat(2,1fr)}
 }
@@ -179,7 +184,7 @@ h1 em,h2 em,.statement em{font-style:italic;font-weight:400;color:var(--cta)}
   .hero .lead{order:4}
   .hero .actions{order:5;margin-top:4px}
   .hero .facts{order:6;grid-template-columns:1fr;margin-top:12px}
-  .facts div,.facts div+div{display:grid;grid-template-columns:8em minmax(0,1fr);gap:14px;align-items:baseline;padding:14px 0;border-left:0;border-bottom:1px solid var(--line)}
+  .facts div,.facts div+div{display:grid;grid-template-columns:8.6em minmax(0,1fr);gap:14px;align-items:baseline;padding:14px 0;border-left:0;border-bottom:1px solid var(--line)}
   .facts dt{font-size:1.4rem}
   .facts dd{margin:0}
   .mq-track{padding:15px 0;font-size:.9rem}
