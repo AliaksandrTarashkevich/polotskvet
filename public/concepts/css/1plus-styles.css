@@ -140,6 +140,9 @@ html[data-style="mag"] h1{font-weight:400;letter-spacing:-.025em}
 html[data-style="mag"] h2{font-size:clamp(2.1rem,4.2vw,3.7rem);font-weight:400;letter-spacing:-.02em}
 html[data-style="mag"] .btn{border-radius:0;font-size:.84rem;letter-spacing:.09em;text-transform:uppercase}
 html[data-style="mag"] .btn-cta{box-shadow:none}
+/* the uppercase, spaced call button is ~25px wider: below 440px it does not fit next to the logo and the menu,
+   so the header drops it as every style does below 390px (the bottom bar and the hero still offer the call) */
+@media (max-width:439px){html[data-style="mag"] .hd-cta{display:none}html[data-style="mag"] .menu-btn{margin-left:auto}}
 html[data-style="mag"] .chip,html[data-style="mag"] .hero-photo figcaption,html[data-style="mag"] .also,html[data-style="mag"] .prep{border-radius:0}
 html[data-style="mag"] .chip{font:italic 400 1rem var(--serif)}
 /* the band becomes a ruled line of italic words */

@@ -1,5 +1,6 @@
 /* Preview bar: switch between the five layouts and the 1+ assembly, try any palette on any layout,
-   compare photo treatments. Throwaway — not part of the future site. */
+   compare photo treatments; on 1+ also styles and logo icons. A page can show only some groups (data-pv):
+   since 17.11.2026 1+ shows only «Стиль» and «Иконка» for review. Throwaway — not part of the future site. */
 (function () {
   var d = document.documentElement;
   var layout = d.getAttribute('data-layout') || '1';
@@ -24,6 +25,15 @@
   var SHOWN = PALETTES.filter(function (p) { return offered.indexOf(p[0]) > -1; });
   var PHOTOS = [['orig', 'Исходные'], ['graded', 'Выровненные'], ['muted', 'Приглушённые'], ['bw', 'Ч/б']];
   var nativePhotos = layout === '4' ? 'bw' : 'graded';
+  /* data-pv: the only groups this page's bar shows (1+: "styles icons"); without it, all of them.
+     With it the palette is fixed to the first one the page offers and the photos to the page's own treatment. */
+  var only = (d.getAttribute('data-pv') || '').split(' ').filter(Boolean);
+  function shows(group) { return !only.length || only.indexOf(group) > -1; }
+  var nativePalette = only.length ? offered[0] : base;
+  var STYLE_NAMES = { calm: 'Спокойно', bold: 'Смело', play: 'Игриво', mag: 'Журнал' };
+  var styles = (d.getAttribute('data-styles') || '').split(' ').filter(Boolean);
+  /* data-icons: logo options (1+ since 17.11.2026); icons/icon-N.png is both the favicon and the bar button */
+  var icons = (d.getAttribute('data-icons') || '').split(' ').filter(Boolean);
 
   function store(key, value) {
     try { if (value == null) localStorage.removeItem(key); else localStorage.setItem(key, value); } catch (e) {}
@@ -38,62 +48,69 @@
   var bar = el('div', 'pv');
   bar.setAttribute('role', 'region');
   bar.setAttribute('aria-label', 'Переключатель вариантов дизайна');
+  if (only.length) bar.classList.add('pv-only');
 
   /* layouts */
-  var gLayouts = el('div', 'pv-g pv-layouts');
-  gLayouts.appendChild(el('span', 'pv-l', 'Вариант'));
-  LAYOUTS.forEach(function (item) {
-    var a = el('a', 'pv-tab');
-    a.href = item[0] + '.html';
-    a.title = item[1] + ' (клавиша ' + (item[3] || item[0]) + ')';
-    a.appendChild(el('b', null, item[2] || item[0]));
-    a.appendChild(el('span', null, item[1]));
-    if (item[0] === layout) a.setAttribute('aria-current', 'page');
-    gLayouts.appendChild(a);
-  });
-  bar.appendChild(gLayouts);
+  if (shows('layouts')) {
+    var gLayouts = el('div', 'pv-g pv-layouts');
+    gLayouts.appendChild(el('span', 'pv-l', 'Вариант'));
+    LAYOUTS.forEach(function (item) {
+      var a = el('a', 'pv-tab');
+      a.href = item[0] + '.html';
+      a.title = item[1] + ' (клавиша ' + (item[3] || item[0]) + ')';
+      a.appendChild(el('b', null, item[2] || item[0]));
+      a.appendChild(el('span', null, item[1]));
+      if (item[0] === layout) a.setAttribute('aria-current', 'page');
+      gLayouts.appendChild(a);
+    });
+    bar.appendChild(gLayouts);
+  }
 
   /* palettes */
-  var gPalettes = el('div', 'pv-g pv-palettes');
-  gPalettes.appendChild(el('span', 'pv-l', 'Палитра'));
-  var swatches = SHOWN.map(function (p) {
-    var b = el('button', 'pv-sw');
-    b.type = 'button';
-    b.title = p[1] + (p[0] === base ? ' — родная для этого варианта' : '');
-    b.setAttribute('aria-label', 'Палитра: ' + p[1]);
-    b.style.setProperty('--a', p[2]);
-    b.style.setProperty('--b', p[3]);
-    b.style.setProperty('--c', p[4]);
-    if (p[0] === base) b.setAttribute('data-native', '');
-    b.addEventListener('click', function () { setPalette(p[0]); });
-    gPalettes.appendChild(b);
-    return [p[0], b];
-  });
-  bar.appendChild(gPalettes);
+  var swatches = [];
+  if (shows('palettes')) {
+    var gPalettes = el('div', 'pv-g pv-palettes');
+    gPalettes.appendChild(el('span', 'pv-l', 'Палитра'));
+    swatches = SHOWN.map(function (p) {
+      var b = el('button', 'pv-sw');
+      b.type = 'button';
+      b.title = p[1] + (p[0] === base ? ' — родная для этого варианта' : '');
+      b.setAttribute('aria-label', 'Палитра: ' + p[1]);
+      b.style.setProperty('--a', p[2]);
+      b.style.setProperty('--b', p[3]);
+      b.style.setProperty('--c', p[4]);
+      if (p[0] === base) b.setAttribute('data-native', '');
+      b.addEventListener('click', function () { setPalette(p[0]); });
+      gPalettes.appendChild(b);
+      return [p[0], b];
+    });
+    bar.appendChild(gPalettes);
+  }
 
   /* photos */
-  var gPhotos = el('div', 'pv-g pv-photos');
-  gPhotos.appendChild(el('span', 'pv-l', 'Фото'));
-  var seg = el('div', 'pv-seg');
-  var photoBtns = PHOTOS.map(function (p) {
-    var b = el('button', null, p[1]);
-    b.type = 'button';
-    b.addEventListener('click', function () { setPhotos(p[0]); });
-    seg.appendChild(b);
-    return [p[0], b];
-  });
-  gPhotos.appendChild(seg);
-  var cycle = el('button', 'pv-cycle');
-  cycle.type = 'button';
-  cycle.addEventListener('click', nextPhotos);
-  gPhotos.appendChild(cycle);
-  bar.appendChild(gPhotos);
+  var photoBtns = [], cycle = null;
+  if (shows('photos')) {
+    var gPhotos = el('div', 'pv-g pv-photos');
+    gPhotos.appendChild(el('span', 'pv-l', 'Фото'));
+    var seg = el('div', 'pv-seg');
+    photoBtns = PHOTOS.map(function (p) {
+      var b = el('button', null, p[1]);
+      b.type = 'button';
+      b.addEventListener('click', function () { setPhotos(p[0]); });
+      seg.appendChild(b);
+      return [p[0], b];
+    });
+    gPhotos.appendChild(seg);
+    cycle = el('button', 'pv-cycle');
+    cycle.type = 'button';
+    cycle.addEventListener('click', nextPhotos);
+    gPhotos.appendChild(cycle);
+    bar.appendChild(gPhotos);
+  }
 
-  /* styles (1+ only): the same page in other visual directions, on its own row */
-  var STYLE_NAMES = { calm: 'Спокойно', bold: 'Смело', play: 'Игриво', mag: 'Журнал' };
-  var styles = (d.getAttribute('data-styles') || '').split(' ').filter(Boolean);
+  /* styles (1+ only): the same page in other visual directions; on the full bar a row of its own */
   var styleBtns = [];
-  if (styles.length) {
+  if (styles.length && shows('styles')) {
     bar.classList.add('has-styles');
     var gStyles = el('div', 'pv-g pv-styles');
     gStyles.appendChild(el('span', 'pv-l', 'Стиль'));
@@ -110,17 +127,45 @@
     bar.appendChild(gStyles);
   }
 
+  /* icons (1+ only): logo options, each button shows its icon */
+  var iconBtns = [];
+  if (icons.length && shows('icons')) {
+    var gIcons = el('div', 'pv-g pv-icons');
+    gIcons.appendChild(el('span', 'pv-l', 'Иконка'));
+    icons.forEach(function (id, n) {
+      var b = el('button', 'pv-icon');
+      b.type = 'button';
+      b.title = 'Иконка ' + (n + 1) + ' (клавиша I — следующая)';
+      b.setAttribute('aria-label', 'Иконка ' + (n + 1));
+      var img = el('img');
+      img.src = 'icons/icon-' + id + '.png';
+      img.alt = '';
+      img.width = 24;
+      img.height = 24;
+      b.appendChild(img);
+      b.addEventListener('click', function () { setIcon(id); });
+      gIcons.appendChild(b);
+      iconBtns.push([id, b]);
+    });
+    bar.appendChild(gIcons);
+  }
+
   /* tools */
   var tools = el('div', 'pv-tools');
   var reset = el('button', 'pv-ic', '↺');
   reset.type = 'button';
-  reset.title = styles.length ? 'Вернуть родную палитру, фото и стиль' : 'Вернуть родную палитру и фото';
+  reset.title = only.length ? 'Вернуть стиль и иконку по умолчанию' : styles.length ? 'Вернуть родную палитру, фото и стиль' : 'Вернуть родную палитру и фото';
   reset.setAttribute('aria-label', reset.title);
   reset.setAttribute('data-act', 'reset');
   reset.addEventListener('click', function () {
-    store('pv-palette', null); store('pv-photos', null); store('pv-style', null);
-    applyPalette(base); applyPhotos(nativePhotos);
+    if (shows('palettes')) store('pv-palette', null);
+    if (shows('photos')) store('pv-photos', null);
+    store('pv-style', null);
+    store('pv-icon', null);
+    applyPalette(nativePalette);
+    applyPhotos(nativePhotos);
     if (styles.length) applyStyle(styles[0]);
+    if (icons.length) applyIcon(icons[0]);
   });
   var hide = el('button', 'pv-ic', '×');
   hide.type = 'button';
@@ -168,7 +213,7 @@
       p[1].setAttribute('aria-pressed', String(on));
       if (on) label = PHOTOS[i][1];
     });
-    cycle.textContent = 'Фото: ' + label.toLowerCase();
+    if (cycle) cycle.textContent = 'Фото: ' + label.toLowerCase();
   }
   function setPhotos(mode) {
     store('pv-photos', mode === nativePhotos ? null : mode);
@@ -194,37 +239,56 @@
     applyStyle(s);
   }
   function nextStyle() {
-    if (!styles.length) return;
     var i = styles.indexOf(d.getAttribute('data-style'));
     setStyle(styles[(i + 1) % styles.length]);
   }
 
-  applyPalette(d.getAttribute('data-palette') || base);
+  function applyIcon(id) {
+    d.setAttribute('data-icon', id);
+    iconBtns.forEach(function (p) { p[1].setAttribute('aria-pressed', String(p[0] === id)); });
+    var fav = document.querySelector('link[rel~="icon"]');
+    if (fav) fav.setAttribute('href', 'icons/icon-' + id + '.png');
+  }
+  function setIcon(id) {
+    store('pv-icon', id === icons[0] ? null : id);
+    applyIcon(id);
+  }
+  function nextIcon() {
+    var i = icons.indexOf(d.getAttribute('data-icon'));
+    setIcon(icons[(i + 1) % icons.length]);
+  }
+
+  applyPalette(d.getAttribute('data-palette') || nativePalette);
   applyPhotos(d.getAttribute('data-photos') || nativePhotos);
   if (styles.length) applyStyle(d.getAttribute('data-style') || styles[0]);
+  if (icons.length) applyIcon(d.getAttribute('data-icon') || icons[0]);
   syncHeight();
   if ('ResizeObserver' in window) new ResizeObserver(syncHeight).observe(bar);
   window.addEventListener('resize', syncHeight);
 
-  /* keys: 1–5 layouts, + the 1+ assembly, ←/→ previous/next in bar order, P palette, F photos, H hide */
+  /* keys: 1–5 layouts, + the 1+ assembly, ←/→ previous/next in bar order, P palette, F photos,
+     S style, I icon, H hide; only for the groups this bar shows */
   document.addEventListener('keydown', function (e) {
     if (e.metaKey || e.ctrlKey || e.altKey) return;
     var t = e.target;
     if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable)) return;
     if (document.querySelector('dialog[open]')) return;
     var k = e.key === '=' ? '+' : e.key;
-    var go = null, at = 0, count = LAYOUTS.length;
-    LAYOUTS.forEach(function (item, i) {
-      if (k === (item[3] || item[0])) go = item[0];
-      if (item[0] === layout) at = i;
-    });
-    if (go) { if (go !== layout) location.href = go + '.html'; return; }
-    var onTab = t && t.getAttribute && t.getAttribute('role') === 'tab';
-    if (k === 'ArrowRight' && !onTab) location.href = LAYOUTS[(at + 1) % count][0] + '.html';
-    else if (k === 'ArrowLeft' && !onTab) location.href = LAYOUTS[(at + count - 1) % count][0] + '.html';
-    else if (k === 'p' || k === 'P' || k === 'з' || k === 'З') nextPalette();
-    else if (k === 'f' || k === 'F' || k === 'а' || k === 'А') nextPhotos();
-    else if (k === 's' || k === 'S' || k === 'ы' || k === 'Ы') nextStyle();
+    if (shows('layouts')) {
+      var go = null, at = 0, count = LAYOUTS.length;
+      LAYOUTS.forEach(function (item, i) {
+        if (k === (item[3] || item[0])) go = item[0];
+        if (item[0] === layout) at = i;
+      });
+      if (go) { if (go !== layout) location.href = go + '.html'; return; }
+      var onTab = t && t.getAttribute && t.getAttribute('role') === 'tab';
+      if (k === 'ArrowRight' && !onTab) { location.href = LAYOUTS[(at + 1) % count][0] + '.html'; return; }
+      if (k === 'ArrowLeft' && !onTab) { location.href = LAYOUTS[(at + count - 1) % count][0] + '.html'; return; }
+    }
+    if (swatches.length && (k === 'p' || k === 'P' || k === 'з' || k === 'З')) nextPalette();
+    else if (photoBtns.length && (k === 'f' || k === 'F' || k === 'а' || k === 'А')) nextPhotos();
+    else if (styleBtns.length && (k === 's' || k === 'S' || k === 'ы' || k === 'Ы')) nextStyle();
+    else if (iconBtns.length && (k === 'i' || k === 'I' || k === 'ш' || k === 'Ш')) nextIcon();
     else if (k === 'h' || k === 'H' || k === 'р' || k === 'Р') setHidden(!d.classList.contains('pv-off'));
   });
 })();

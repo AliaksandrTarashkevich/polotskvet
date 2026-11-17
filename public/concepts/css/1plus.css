@@ -18,6 +18,8 @@ h1 em,h2 em,.statement em{font-style:italic;font-weight:400;color:var(--cta)}
 .hd-in{display:flex;align-items:center;gap:32px;height:var(--hd-h)}
 .logo{flex:none}
 .logo img{width:auto;height:62px;margin:-12px 0 -12px -6px}
+/* logo options (17.11.2026): «Иконка» in the preview bar sets data-icon before first paint; without JS, option 1 */
+html:not([data-icon="2"]) .logo img[data-logo="2"],html[data-icon="2"] .logo img[data-logo="1"]{display:none}
 .nav{display:flex;gap:30px;margin-left:auto;font-size:.95rem}
 .nav a{padding:6px 0;border-bottom:1px solid transparent;transition:border-color .2s}
 .nav a:hover{border-color:currentColor}
