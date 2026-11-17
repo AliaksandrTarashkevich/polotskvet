@@ -4,7 +4,7 @@ Collected 17.11.2026 while the site got separate pages. Every answer unlocks som
 
 | # | Question | What it unlocks |
 |---|---|---|
-| 1 | Which services he does at home | Keep, rewrite or remove `/uslugi/vakcinaciya`, `/uslugi/analizy`, `/uslugi/procedury`; add missing ones |
+| 1 | ~~Which services he does at home~~ answered by Alex 17.11.2026 | Keep, rewrite or remove `/uslugi/vakcinaciya`, `/uslugi/analizy`, `/uslugi/procedury`; add missing ones |
 | 2 | Prices in BYN | `/ceny`, prices on service pages and in the FAQ |
 | 3 | Hours for calls and visits, urgent calls | `/kontakty`, FAQ, structured data |
 | 4 | How far outside the cities he travels, how travel is charged | `/zona-vyezda`, `/ceny` |
@@ -25,7 +25,7 @@ Collected 17.11.2026 while the site got separate pages. Every answer unlocks som
 ```text
 Ром, привет! Собрали сайт отдельными страницами: врач, услуги, цены, зона выезда, вопросы, контакты. Посмотри, пожалуйста: https://polotskvet.vercel.app (пока закрыт от поисковиков). Чтобы открыть его для Google и Яндекса, нужны ответы:
 
-1. Что из этого реально делаешь на дому: осмотр и консультация, прививки, взятие крови, уколы, капельницы, чипирование, стрижка когтей? Что ещё? УЗИ на дому делаешь?
+1. Услуги на сайте сейчас: осмотр, вакцинация, анализы, ЭКГ, чипирование, стрижка когтей, капельницы, лечебные манипуляции. Всё верно? УЗИ на дому не делаешь?
 2. Цены в рублях, хотя бы «от»: выезд по Полоцку и Новополоцку, осмотр, онлайн-консультация, остальные услуги.
 3. Когда тебе можно звонить и писать, в какие дни и часы выезжаешь? Берёшь срочные вызовы?
 4. Насколько далеко выезжаешь за город и как считаешь дорогу?

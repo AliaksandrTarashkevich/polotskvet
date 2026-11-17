@@ -1,72 +1,89 @@
 {
-  "updatedAt": "2026-11-15",
-  "note": "Онлайн-консультации подтверждены Романом в разговоре 13.11.2026. Остальные позиции — кандидаты; окончательный список и цены он пришлёт позже.",
+  "updatedAt": "2026-11-17",
+  "note": "Услуги на дому подтвердил Alex, 17.11.2026: «Осмотр, вакцинация, анализы, ЭКГ, чипирование, стрижка когтей, капельницы, лечебные манипуляции — это услуги». Онлайн-консультации подтверждены Романом в разговоре 13.11.2026. УЗИ на дому в списке нет. Цены, график и медицинские подробности (препараты, схемы, перечни исследований) неизвестны.",
   "services": [
-    {
-      "id": "online-consultation",
-      "title": "Онлайн-консультация",
-      "draftDescription": "Обсуждение состояния питомца, имеющихся назначений и дальнейшего формата помощи.",
-      "confirmedByDoctor": true,
-      "displayInProduction": true,
-      "priceBYN": null,
-      "channel": null,
-      "confirmedSource": "meeting_2026_11_13"
-    },
     {
       "id": "consultation",
       "title": "Осмотр и консультация",
-      "draftDescription": "Осмотр питомца и обсуждение дальнейших действий.",
-      "confirmedByDoctor": false,
-      "displayInProduction": false,
+      "url": "/uslugi/vyzov-veterinara-na-dom",
+      "description": "Осмотр питомца на дому, обсуждение его состояния и дальнейших действий.",
+      "confirmed": true,
+      "confirmedSource": "Alex, 17.11.2026",
       "priceBYN": null
     },
     {
       "id": "vaccination",
       "title": "Вакцинация",
-      "draftDescription": "Профилактические прививки на дому по согласованию с врачом.",
-      "confirmedByDoctor": false,
-      "displayInProduction": false,
+      "url": "/uslugi/vakcinaciya",
+      "description": "Профилактические прививки на дому. Условия и подготовку согласуем при записи.",
+      "confirmed": true,
+      "confirmedSource": "Alex, 17.11.2026",
       "priceBYN": null
     },
     {
       "id": "lab-tests",
       "title": "Анализы",
-      "draftDescription": "Взятие крови на дому. Перечень исследований и подготовку согласуем перед выездом.",
-      "wordingBy": "Alex, 15.11.2026 (было «Забор анализов» / «Забор биоматериала»)",
-      "confirmedByDoctor": false,
-      "displayInProduction": false,
+      "url": "/uslugi/analizy",
+      "description": "Взятие крови на дому. Перечень исследований и подготовку согласуем перед выездом.",
+      "wordingBy": "Alex, 15.11.2026",
+      "confirmed": true,
+      "confirmedSource": "Alex, 17.11.2026",
       "priceBYN": null
     },
     {
-      "id": "injections",
-      "title": "Инъекции",
-      "draftDescription": "Выполнение назначенных ветеринарным врачом процедур.",
-      "confirmedByDoctor": false,
-      "displayInProduction": false,
-      "priceBYN": null
-    },
-    {
-      "id": "iv-therapy",
-      "title": "Капельницы",
-      "draftDescription": "По показаниям и после оценки возможности проведения дома.",
-      "confirmedByDoctor": false,
-      "displayInProduction": false,
+      "id": "ecg",
+      "title": "ЭКГ",
+      "url": "/uslugi/ekg",
+      "description": "Электрокардиограмма на дому. Кардиология — одно из направлений основного врача.",
+      "new": true,
+      "confirmed": true,
+      "confirmedSource": "Alex, 17.11.2026",
       "priceBYN": null
     },
     {
       "id": "microchipping",
       "title": "Чипирование",
-      "draftDescription": "Идентификация питомца; порядок регистрации нужно подтвердить.",
-      "confirmedByDoctor": false,
-      "displayInProduction": false,
+      "url": "/uslugi/chipirovanie",
+      "description": "Установка микрочипа для идентификации питомца. Порядок регистрации чипа не подтверждён: не описывать.",
+      "confirmed": true,
+      "confirmedSource": "Alex, 17.11.2026",
       "priceBYN": null
     },
     {
       "id": "nail-care",
-      "title": "Подрезание когтей",
-      "draftDescription": "Гигиеническая процедура с выездом на дом.",
-      "confirmedByDoctor": false,
-      "displayInProduction": false,
+      "title": "Стрижка когтей",
+      "url": "/uslugi/strizhka-kogtej",
+      "description": "Стрижка когтей дома, в привычной для питомца обстановке.",
+      "confirmed": true,
+      "confirmedSource": "Alex, 17.11.2026",
+      "priceBYN": null
+    },
+    {
+      "id": "iv-therapy",
+      "title": "Капельницы",
+      "url": "/uslugi/kapelnicy",
+      "description": "Капельницы на дому по назначению врача.",
+      "confirmed": true,
+      "confirmedSource": "Alex, 17.11.2026",
+      "priceBYN": null
+    },
+    {
+      "id": "treatment",
+      "title": "Лечебные манипуляции",
+      "url": "/uslugi/procedury",
+      "description": "Назначенные врачом лечебные манипуляции и уход на дому, например уколы.",
+      "formerTitle": "Лечебные процедуры",
+      "confirmed": true,
+      "confirmedSource": "Alex, 17.11.2026",
+      "priceBYN": null
+    },
+    {
+      "id": "online-consultation",
+      "title": "Онлайн-консультация",
+      "url": "/uslugi/onlajn-konsultaciya",
+      "description": "Обсуждение состояния питомца, назначений и результатов обследований; решаем, нужен ли очный приём.",
+      "confirmedSource": "Роман, разговор 13.11.2026",
+      "confirmed": true,
       "priceBYN": null
     }
   ]

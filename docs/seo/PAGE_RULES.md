@@ -18,9 +18,13 @@ The site stays closed to indexing until launch (see `docs/seo/LAUNCH_CHECKLIST.m
 | `/uslugi` | `public/uslugi.html` | What can be done at home and online |
 | `/uslugi/vyzov-veterinara-na-dom` | `public/uslugi/vyzov-veterinara-na-dom.html` | **Reference page.** How a home visit works |
 | `/uslugi/onlajn-konsultaciya` | `public/uslugi/onlajn-konsultaciya.html` | Online consultation (confirmed by Roman) |
-| `/uslugi/vakcinaciya` | `public/uslugi/vakcinaciya.html` | Vaccination at home (candidate, not confirmed) |
-| `/uslugi/analizy` | `public/uslugi/analizy.html` | Blood sampling at home (candidate, not confirmed) |
-| `/uslugi/procedury` | `public/uslugi/procedury.html` | Prescribed procedures at home (candidate, not confirmed) |
+| `/uslugi/vakcinaciya` | `public/uslugi/vakcinaciya.html` | Vaccination at home |
+| `/uslugi/analizy` | `public/uslugi/analizy.html` | Blood sampling at home |
+| `/uslugi/ekg` | `public/uslugi/ekg.html` | ECG at home (cardiology is one of the main doctor's profiles) |
+| `/uslugi/chipirovanie` | `public/uslugi/chipirovanie.html` | Microchipping at home |
+| `/uslugi/strizhka-kogtej` | `public/uslugi/strizhka-kogtej.html` | Nail trimming at home |
+| `/uslugi/kapelnicy` | `public/uslugi/kapelnicy.html` | Drips (IV) at home, as prescribed |
+| `/uslugi/procedury` | `public/uslugi/procedury.html` | «Лечебные манипуляции» at home (the URL stays from the old «Лечебные процедуры») |
 | `/ceny` | `public/ceny.html` | How much a visit costs and what the price is made of |
 | `/zona-vyezda` | `public/zona-vyezda.html` | Where the doctor travels |
 | `/voprosy` | `public/voprosy.html` | All questions and answers |
@@ -74,14 +78,9 @@ Only these. If a sentence needs anything else, leave it out and list it as a que
 - Ограничения: возможности домашнего приёма ограничены; некоторые исследования и лечение требуют оборудования клиники; перед записью обсудим, подходит ли выезд.
 - УЗИ — направление Романа, но выездное УЗИ не входит в список услуг. Never offer ultrasound at home.
 
-### Candidate services (not confirmed by Roman)
+### Services at home (confirmed by Alex, 17.11.2026)
 
-Вакцинация, взятие крови для анализов, лечебные процедуры (candidates in `inputs/services.json`: инъекции, капельницы). They appear on the site already, so their pages exist, written carefully:
-
-- say the service is discussed and agreed when booking: «по согласованию», «условия уточняем при записи», «врач уточнит, подходит ли домашний формат»;
-- never «делаем», «всегда», «гарантируем», «в любое время»;
-- no medical specifics: no vaccine names or schedules, no list of lab tests, no lab name, no turnaround times, no drug names, no doses;
-- injections and drips only as «по назначению врача и после оценки, можно ли провести процедуру дома».
+«Осмотр, вакцинация, анализы, ЭКГ, чипирование, стрижка когтей, капельницы, лечебные манипуляции — это услуги», plus the online consultation. Write them as services we provide; the conditions, timing and preparation are agreed when booking. Still no medical specifics: no vaccine names or schedules, no list of lab tests, lab names or turnaround times, no fasting rules, no drug names or doses, no microchip registration procedure (not confirmed), no claims about what an ECG will diagnose. ECG may be linked to the main doctor's cardiology profile. Drips and manipulations are «по назначению врача». Ultrasound at home is not on the list: never offer it.
 
 ### Never
 
