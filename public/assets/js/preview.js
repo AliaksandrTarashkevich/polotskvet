@@ -22,6 +22,24 @@
   bar.setAttribute('role', 'region');
   bar.setAttribute('aria-label', 'Выбор стиля и иконки сайта');
 
+  /* home page versions (Alex, 17.11.2026): the approved home at / and the new one at /novaya */
+  var home = d.getAttribute('data-home');
+  if (home) {
+    var gHome = el('div', 'pv-g pv-home');
+    gHome.appendChild(el('span', 'pv-l', 'Главная'));
+    var hseg = el('div', 'pv-sseg');
+    [['old', 'Как была', '/'], ['new', 'Новая', '/novaya']].forEach(function (h) {
+      var b = el('button', null, h[1]);
+      b.type = 'button';
+      b.title = h[0] === 'old' ? 'Главная, как её утвердили' : 'Новая главная со ссылками на отдельные страницы';
+      b.setAttribute('aria-pressed', String(h[0] === home));
+      b.addEventListener('click', function () { if (h[0] !== home) location.href = h[2] + location.search; });
+      hseg.appendChild(b);
+    });
+    gHome.appendChild(hseg);
+    bar.appendChild(gHome);
+  }
+
   var styleBtns = [];
   if (styles.length) {
     var gStyles = el('div', 'pv-g pv-styles');

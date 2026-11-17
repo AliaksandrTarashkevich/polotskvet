@@ -250,3 +250,5 @@ html[data-style="mag"] .gallery .ph{border-radius:0}
   html[data-style="bold"] .page-photo{box-shadow:8px 8px 0 var(--signal)}
   html[data-style="mag"] .page-photo{width:auto;justify-self:stretch;margin-inline:calc(-1 * var(--gut))}
 }
+/* calls to action on the deep colour of «Смело» (the visit block) */
+html[data-style="bold"] .visit .btn-cta{background:var(--cta-inv);color:var(--on-cta-inv);box-shadow:4px 4px 0 var(--signal)}

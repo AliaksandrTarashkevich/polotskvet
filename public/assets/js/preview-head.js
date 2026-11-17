@@ -9,7 +9,7 @@
   if (hidden) d.classList.add('pv-off');
   var narrow = window.matchMedia && window.matchMedia('(max-width:760px)').matches;
   /* a first guess before the bar exists; preview.js measures the real height */
-  d.style.setProperty('--pv-h', hidden ? '0px' : narrow ? '84px' : '46px');
+  d.style.setProperty('--pv-h', hidden ? '0px' : narrow ? (d.getAttribute('data-home') ? '122px' : '84px') : '46px');
 
   /* data-styles / data-icons list the options, the first is the default */
   function pick(list, attr, key, re) {

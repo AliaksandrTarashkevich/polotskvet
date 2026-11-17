@@ -1,6 +1,6 @@
 # PolotskVet — rules for site pages (SEO and AI answers)
 
-Written 17.11.2026 when the site moved from one long page to separate pages. Read this before writing or changing any page. `AGENTS.md`, `docs/PROJECT_CONTEXT.md` and `inputs/*.json` still apply; when they disagree with this file, they win.
+Written 17.11.2026 when the site moved from one long page to separate pages; voice, animals and the date line revised the same day. Read this before writing or changing any page. `AGENTS.md`, `docs/PROJECT_CONTEXT.md` and `inputs/*.json` still apply; when they disagree with this file, they win.
 
 ## Why the pages exist
 
@@ -12,7 +12,8 @@ The site stays closed to indexing until launch (see `docs/seo/LAUNCH_CHECKLIST.m
 
 | URL | File | Main question |
 |---|---|---|
-| `/` | `public/index.html` | Home: who, where, what, how to book |
+| `/` | `public/index.html` | Home as Alex approved it (the 1+ assembly) plus calls to action; design and copy stay as approved |
+| `/novaya` | `public/novaya.html` | The new home with links to every page, shown next to `/` with the «Главная» switch in the bar until Alex picks one |
 | `/vrach` | `public/vrach.html` | Who is the doctor: education, experience, profiles, approach |
 | `/uslugi` | `public/uslugi.html` | What can be done at home and online |
 | `/uslugi/vyzov-veterinara-na-dom` | `public/uslugi/vyzov-veterinara-na-dom.html` | **Reference page.** How a home visit works |
@@ -41,12 +42,13 @@ Copy from the reference page `public/uslugi/vyzov-veterinara-na-dom.html`, verba
 Inside `<main>`, in this order:
 
 1. `section.page-hero.wrap`: `nav.crumbs` (Главная / … / current page as `<span aria-current="page">`), `p.eyebrow`, `h1`, `p.lead`, `div.actions` with the «Вызвать врача» button (`data-contact="<topic>"`) and the phone as `a.link-arrow.tel`. A `figure.page-photo` with one photo on the right (optional).
-2. `section.answer.wrap`: `p.note` «коротко», then one paragraph of 2–4 sentences that answers the page's main question on its own: who, what, where, how to book (phone and Telegram as links), the price policy. Assume the reader sees only this paragraph.
+2. `section.answer.wrap`: `p.note` «коротко», then one paragraph of 2–4 sentences that answers the page's main question on its own: what we do, where, who the main doctor is (one mention), how to book (phone and Telegram as links), the price policy. Assume the reader sees only this paragraph.
 3. `section.prose.wrap` blocks: `h2` on the left, `div.body` on the right. Headings are short; many can be questions people ask.
 4. `section.faq.wrap.topline`: 3–6 questions in `<details><summary>…</summary><p>…</p></details>`.
 5. `section.related.wrap` with `div.links`: 3–6 links to related pages, each `<a href><b>Title</b><span>one line</span></a>`.
-6. `p.updated.wrap`: «Обновлено 17&nbsp;ноября 2026».
-7. The contact block.
+6. The contact block.
+
+No «Обновлено» date line (Alex, 17.11.2026).
 
 Components in `public/assets/css/site.css` you may use inside `.body` or as sections: `ul.dots` (bullets), `ul.ticks` (check marks), `ol.steps` (numbered steps with `h3` + `p`), `div.tiles` (plain cards: `<div><b>…</b><span>…</span></div>`), `div.reach` (big contact cards, links), `div.gallery` (photos: `<figure><div class="ph"><img></div><figcaption><b>…</b>…</figcaption></figure>`), `div.towns` (chips), `.grid` with `article.svc` cards (as on the home page: `h3 > a` makes the whole card a link), `p.note`, `a.more`, `.eyebrow`, `.lead`. All four styles already handle them. Do not add inline styles or new CSS; if a page needs something missing, say so in your report.
 
@@ -63,7 +65,7 @@ Only these. If a sentence needs anything else, leave it out and list it as a que
 - Формат: выезд на дом и онлайн-консультации. No clinic, no office address, no in-clinic appointments.
 - Зона выезда: Полоцк, Новополоцк, Полоцкий район и ближайшие населённые пункты; более дальние адреса, возможность визита и стоимость дороги согласуем заранее. No radius, no list of villages, no travel times.
 - Если Роман занят, к вам может приехать другой ветеринарный врач. Кто приедет, согласуем при записи. (Never name or describe the second doctor.)
-- Животные: кошки и собаки (the wording on the site; Roman has not confirmed other species).
+- Животные: кошки, собаки и другие домашние питомцы, например попугаи и хомяки (Alex, 17.11.2026: «не обязательно кошки и собаки, ещё же есть попугаи, хомяки и т. д.»). In general text say «питомцы» or «домашние животные»; never write or imply that only cats and dogs are seen. A service page may name cats and dogs where that is the usual case (vaccination), without «только».
 - Телефон: +375 33 649-17-75, link `tel:+375336491775`. Telegram: @romuluslll, link `https://t.me/romuluslll` with `target="_blank" rel="noopener"`.
 - Запись: назовите город и адрес, возраст животного и причину обращения. Возможность выезда, время визита и стоимость согласуем при записи.
 - Стоимость зависит от адреса и необходимой помощи: выезд, осмотр, процедуры, препараты и расходные материалы. Итоговую сумму и возможные доплаты обсуждаем перед записью. There are no prices yet: no numbers, no «от … BYN», no «недорого».
@@ -87,7 +89,9 @@ Prices, opening hours, «24/7», «круглосуточно», arrival times (
 
 ## Copy
 
-- Russian, calm and plain, like the home page. Short sentences. Speak to the owner («вы»), the doctor in the third person («Роман», «врач»).
+- Russian, calm and plain, like the home page. Short sentences. Speak to the owner («вы»).
+- The practice speaks as «мы» (Alex, 17.11.2026): «мы приезжаем», «согласуем», «врач приедет». Roman Chertopalov is the main doctor, not the only one: another vet may come. Name him only where his identity matters: the doctor page `/vrach`, at most one line per other page such as «Основной врач — Роман Чертопалов, ветеринарный врач с&nbsp;8-летним опытом», and the JSON-LD. No headings or sentences built around his name elsewhere: «Как мы работаем», «Мы за работой», not «Как Роман работает», «Роман за работой». The second-doctor sentence stays.
+- The reference page was written before this rule: copy its structure, not its sentences.
 - Typography as on the home page: «ёлочки», em dash with a non-breaking space before it (`&nbsp;—`), `&nbsp;` after one- and two-letter words (в, и, к, с, о, у, на, по, не, за, до, от…), «ё» where it belongs.
 - One `h1` per page, with the city where natural. `h2` for blocks; `h3` only inside steps and cards.
 - Link the first mention of another page's topic to that page. Link text says where it goes («Из чего складывается цена»), never «здесь» or «подробнее» alone.

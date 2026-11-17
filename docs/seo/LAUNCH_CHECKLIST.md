@@ -10,11 +10,12 @@ The open questions are collected, ready to send, in `docs/ROMAN_QUESTIONS.md`. B
 - [ ] Prices in BYN, at least «от»: add them to `/ceny`, the service pages and the FAQ; then `priceRange` may go into the practice node.
 - [ ] Hours for calls and visits: add to `/kontakty`, the FAQ and `openingHoursSpecification`.
 - [ ] Species (now «кошки и собаки»), «профилактика» as the fifth profile, the second doctor.
-- [ ] Roman reads every page. After that, each page's «Обновлено» line can say «Текст проверил ветеринарный врач Роман Чертопалов».
+- [ ] Roman reads every page and confirms the texts.
 - [ ] 3–5 real photos from home visits replace the generated `gen-cat-*` illustrations.
 
 ## 2. Design decisions
 
+- [ ] Home chosen: `/` (as approved, plus calls to action) or `/novaya` (links to every page). Keep one at `/`, delete the other file and `data-home` with the «Главная» switch in `preview.js`.
 - [ ] Style chosen (Спокойно / Смело / Игриво / Журнал): keep its rules in `public/assets/css/styles.css` without the `html[data-style="…"]` prefix, delete the other three.
 - [ ] Icon chosen: keep `logo-N.png` and `icon-N.png`, delete the other option and the `data-logo` switch rule in `site.css`; make `apple-touch-icon.png` (180×180) and a 32×32 favicon from the chosen icon.
 - [ ] Remove the preview bar from every page: `data-styles`, `data-icons`, `preview-head.js`, `preview.js`, `preview.css`.
@@ -30,7 +31,7 @@ The open questions are collected, ready to send, in `docs/ROMAN_QUESTIONS.md`. B
 
 - [ ] `<link rel="canonical" href="https://DOMAIN/…">` on every page, without `.html`.
 - [ ] JSON-LD: turn relative URLs (`"/"`, `"/vrach"`, `"/#practice"`, `"/assets/…"`) into full `https://DOMAIN/…` URLs.
-- [ ] `public/sitemap.xml` with every page except `404.html`, `lastmod` from the «Обновлено» dates.
+- [ ] `public/sitemap.xml` with every page except `404.html` (and except the home version that was not chosen), `lastmod` from the last commit that changed each page.
 - [ ] `public/robots.txt`:
 
   ```

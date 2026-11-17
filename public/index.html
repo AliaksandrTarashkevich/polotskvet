@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru" data-styles="calm bold play mag" data-icons="1 2">
+<html lang="ru" data-styles="calm bold play mag" data-icons="1 2" data-home="old">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -69,13 +69,12 @@
 
 <header class="hd">
   <div class="wrap hd-in">
-    <a class="logo" href="/" aria-label="PolotskVet — на главную"><img data-logo="1" src="/assets/brand/logo-1.png" alt="PolotskVet" width="1094" height="362"><img data-logo="2" src="/assets/brand/logo-2.png" alt="PolotskVet" width="1105" height="362"></a>
+    <a class="logo" href="#top" aria-label="PolotskVet — в начало страницы"><img data-logo="1" src="/assets/brand/logo-1.png" alt="PolotskVet" width="1094" height="362"><img data-logo="2" src="/assets/brand/logo-2.png" alt="PolotskVet" width="1105" height="362"></a>
     <nav class="nav" id="nav" aria-label="Разделы сайта">
-      <a href="/vrach">Врач</a>
-      <a href="/uslugi">Услуги</a>
-      <a href="/ceny">Цены</a>
-      <a href="/voprosy">Вопросы</a>
-      <a href="/kontakty">Контакты</a>
+      <a href="#doctor">Врач</a>
+      <a href="#services">Услуги</a>
+      <a href="#visit">Как проходит визит</a>
+      <a href="#faq">Вопросы</a>
     </nav>
     <button class="btn btn-cta hd-cta" type="button" data-contact>Вызвать врача</button>
     <button class="menu-btn" type="button" data-menu aria-label="Меню" aria-expanded="false" aria-controls="nav"><span></span></button>
@@ -90,7 +89,8 @@
       <p class="lead">Роман Чертопалов осматривает кошек и&nbsp;собак на&nbsp;дому&nbsp;— в&nbsp;знакомой обстановке, без переноски и&nbsp;очереди. Когда ехать не&nbsp;обязательно, консультирует онлайн.</p>
       <div class="actions">
         <button class="btn btn-cta" type="button" data-contact>Вызвать врача</button>
-        <a class="link-arrow" href="/uslugi/onlajn-konsultaciya">Онлайн-консультация</a>
+        <a class="link-arrow" href="#online">Онлайн-консультация</a>
+        <a class="link-arrow tel" href="tel:+375336491775">+375 33 649-17-75</a>
       </div>
       <dl class="facts">
         <div><dt>8 лет</dt><dd>ветеринарной практики</dd></div>
@@ -157,7 +157,6 @@
         <ul class="tags"><li>Терапия</li><li>Кардиология</li><li>Нефроурология</li><li>Функциональная диагностика (УЗИ)</li><li>Профилактика</li></ul>
         <ul class="ticks">
           <li><b>8 лет</b> ветеринарной практики</li>
-          <li>Образование: <b>Витебская государственная академия ветеринарной медицины</b></li>
           <li><b>3 года</b> в&nbsp;клинике «Девять жизней», Минск</li>
           <li>Исполнял обязанности <b>главного врача</b></li>
           <li><b>Pet‑friendly</b> приём и&nbsp;доказательная медицина</li>
@@ -166,7 +165,7 @@
           <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 19.5c.6-3.4 2.8-5.3 5.5-5.3s4.9 1.9 5.5 5.3"/><path d="M15.5 5.2a3.2 3.2 0 0 1 0 5.6M17.6 14.6c1.6.8 2.6 2.4 2.9 4.9"/></svg>
           <span><b>Если Роман занят,</b> к&nbsp;вам может приехать другой ветеринарный врач. Кто приедет, согласуем при записи.</span>
         </p>
-        <a class="more" href="/vrach">Подробнее о&nbsp;враче</a>
+        <div class="cta-row"><button class="btn btn-cta" type="button" data-contact="Запись к врачу">Записаться к&nbsp;врачу</button></div>
       </div>
     </div>
   </section>
@@ -218,7 +217,6 @@
         <button class="btn btn-inv" type="button" data-contact>Спросить врача</button>
       </article>
     </div>
-    <a class="more" href="/uslugi">Все услуги и&nbsp;условия</a>
   </section>
 
   <section class="visit" id="visit">
@@ -233,7 +231,7 @@
           <li><div><h3>Врач приедет на&nbsp;приём</h3><p>Осмотрит питомца, проведёт согласованные процедуры и&nbsp;объяснит дальнейшие действия.</p></div></li>
         </ol>
         <div class="prep"><b>Что подготовить</b>Ветеринарный паспорт, предыдущие назначения и&nbsp;результаты обследований. Выберите спокойное, хорошо освещённое место.</div>
-        <a class="more" href="/uslugi/vyzov-veterinara-na-dom">Подробнее о&nbsp;вызове на&nbsp;дом</a>
+        <div class="cta-row"><button class="btn btn-cta" type="button" data-contact="Вызов на дом">Вызвать врача на&nbsp;дом</button><a class="link-arrow tel" href="tel:+375336491775">+375 33 649-17-75</a></div>
       </div>
     </div>
   </section>
@@ -249,7 +247,6 @@
       <h3>Полоцк, Новополоцк и&nbsp;окрестности</h3>
       <p>Более дальние адреса, возможность визита и&nbsp;стоимость дороги согласуем заранее.</p>
       <div class="towns"><span>Полоцк</span><span>Новополоцк</span><span>Полоцкий район</span><span>ближайшие населённые пункты</span></div>
-      <a class="more" href="/zona-vyezda">Куда выезжает врач</a>
     </article>
   </section>
 
@@ -257,10 +254,9 @@
     <div data-rv>
       <p class="eyebrow">Перед записью</p>
       <h2>Частые вопросы</h2>
-      <a class="more" href="/voprosy">Все вопросы и&nbsp;ответы</a>
     </div>
     <div data-rv style="--d:.08s">
-      <details><summary>Сколько стоит вызов?</summary><p>Стоимость зависит от адреса и&nbsp;необходимой помощи: выезд, осмотр, процедуры, препараты и&nbsp;расходные материалы. Итоговую сумму и&nbsp;возможные доплаты обсудим перед записью. <a href="/ceny">Из чего складывается цена</a>.</p></details>
+      <details><summary>Сколько стоит вызов?</summary><p>Стоимость зависит от адреса и&nbsp;необходимой помощи: выезд, осмотр, процедуры, препараты и&nbsp;расходные материалы. Итоговую сумму и&nbsp;возможные доплаты обсудим перед записью.</p></details>
       <details><summary>Можно получить консультацию онлайн?</summary><p>Да. Онлайн-консультацию можно согласовать с&nbsp;Романом. Если ситуации нужен очный осмотр, дальнейший формат помощи обсуждается с&nbsp;врачом.</p></details>
       <details><summary>Что подготовить к&nbsp;приезду врача?</summary><p>Ветеринарный паспорт, предыдущие назначения и&nbsp;результаты обследований. Подготовку к&nbsp;конкретной процедуре уточнит врач.</p></details>
       <details><summary>Все&nbsp;ли процедуры можно провести дома?</summary><p>Нет. Некоторые исследования и&nbsp;лечение требуют оборудования клиники. Перед записью обсудите с&nbsp;врачом, подходит&nbsp;ли выезд для вашей ситуации.</p></details>
@@ -285,37 +281,17 @@
   </section>
 </main>
 
-<footer class="ft wrap">
-  <div class="ft-about">
-    <a class="logo" href="/" aria-label="PolotskVet — на главную"><img data-logo="1" src="/assets/brand/logo-1.png" alt="PolotskVet" width="1094" height="362" loading="lazy"><img data-logo="2" src="/assets/brand/logo-2.png" alt="PolotskVet" width="1105" height="362" loading="lazy"></a>
-    <p>Выездная ветеринарная практика Романа Чертопалова: выезд на&nbsp;дом в&nbsp;Полоцке, Новополоцке и&nbsp;окрестностях, онлайн-консультации.</p>
-  </div>
-  <div>
-    <p class="ft-h">Разделы</p>
-    <ul>
-      <li><a href="/vrach">Врач</a></li>
-      <li><a href="/uslugi">Услуги</a></li>
-      <li><a href="/ceny">Цены</a></li>
-      <li><a href="/zona-vyezda">Куда выезжает врач</a></li>
-      <li><a href="/voprosy">Вопросы и&nbsp;ответы</a></li>
-      <li><a href="/kontakty">Контакты</a></li>
-    </ul>
-  </div>
-  <div>
-    <p class="ft-h">Связаться</p>
-    <ul>
-      <li><a class="tel" href="tel:+375336491775">+375 33 649-17-75</a></li>
-      <li><a href="https://t.me/romuluslll" target="_blank" rel="noopener">Telegram: @romuluslll</a></li>
-      <li>Полоцк, Новополоцк и&nbsp;окрестности</li>
-    </ul>
-  </div>
-  <p class="ft-note"><span>© 2026 ПолоцкВет · Роман Чертопалов</span><span>Выезд на&nbsp;дом и&nbsp;онлайн-консультации</span></p>
+<footer class="ft ft-line wrap">
+  <a class="logo" href="#top" aria-label="PolotskVet — в начало страницы"><img data-logo="1" src="/assets/brand/logo-1.png" alt="PolotskVet" width="1094" height="362" loading="lazy"><img data-logo="2" src="/assets/brand/logo-2.png" alt="PolotskVet" width="1105" height="362" loading="lazy"></a>
+  <p>Полоцк, Новополоцк и&nbsp;окрестности · выездная практика и&nbsp;онлайн-консультации</p>
+  <p>© 2026 ПолоцкВет · Роман Чертопалов</p>
 </footer>
 
 <div class="mbar">
   <a class="m1" href="tel:+375336491775">Позвонить</a>
   <a class="m2" href="https://t.me/romuluslll" target="_blank" rel="noopener">Написать</a>
 </div>
+
 
 </body>
 </html>
