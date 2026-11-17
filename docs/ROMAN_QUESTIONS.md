@@ -14,7 +14,7 @@ Collected 17.11.2026 while the site got separate pages. Every answer unlocks som
 | 8 | Procedures prescribed by another vet | `/uslugi/procedury` |
 | 9 | «Профилактика» as the fifth profile | Home, `/vrach`, the running band |
 | 10 | Career details that may be published | `/vrach` |
-| 11 | Training after the academy: conferences, courses, internships, each with name, year and city or organiser. Includes the internship at «Сас Энимал Сервис», Minsk (spelling checked on vetsas.by; year, mentor and area unconfirmed; the line «Стажировка в клинике „Сас Энимал Сервис“, Минск» is on `/vrach` since 18.11.2026 until he answers). Request of 17.11.2026: show that he keeps learning, as a description, not certificates | `/vrach`: dated lines tied to his profiles, an FAQ answer |
+| 11 | Training after the academy: conferences, courses, internships, each with name, year and city or organiser. On `/vrach` since 18.11.2026 without details: the internship at «Сас Энимал Сервис», Minsk (spelling checked on vetsas.by; year, mentor and area unconfirmed) and conferences on ultrasound and cardiology (asked 18.11.2026 whether he went, answer «Да, был»; names and years unknown). Request of 17.11.2026: show that he keeps learning, as a description, not certificates | `/vrach`: details for both lines and the FAQ answer, more dated lines |
 | 12 | The second doctor | `/vrach`, every «если Роман занят» line |
 | 13 | Payment methods | FAQ |
 | 14 | Existing reviews and map profiles | Яндекс Бизнес, Google Business Profile, the reviews plan |
@@ -36,7 +36,7 @@ Collected 17.11.2026 while the site got separate pages. Every answer unlocks som
 8. Делаешь процедуры по назначению другого врача (уколы, капельницы)?
 9. Пятым направлением мы поставили «профилактика» (прививки, плановые осмотры). Так нормально?
 10. Что можно написать о карьере: годы в «Девяти жизнях», где и когда ты был и. о. главврача, год выпуска и специальность в академии?
-11. Хотим показать на сайте, что ты продолжаешь учиться. Какие конференции, курсы и стажировки у тебя были после академии, например по УЗИ, кардиологии, нефроурологии? По каждому пункту: название, год, город или организатор. Сертификаты присылать не обязательно, хватит списка. На странице врача уже есть строка про стажировку в клинике «Сас Энимал Сервис» в Минске: правильно помним? Когда это было, у кого и по какому направлению?
+11. Хотим показать на сайте, что ты продолжаешь учиться. На странице врача уже написали, что ты был на конференциях по УЗИ и кардиологии и стажировался в клинике «Сас Энимал Сервис» в Минске. Пришли список конференций, курсов и стажировок после академии: название, год, город или организатор. Сертификаты присылать не обязательно, хватит списка. По стажировке: когда это было, у кого и по какому направлению?
 12. Второй врач: как его представить на сайте и когда он начнёт выезжать?
 13. Как клиенты платят: наличные, карта, перевод?
 14. Есть ли у тебя уже отзывы где-то (карты, соцсети)? Есть ли карточка в Яндекс Картах или Google Картах?
