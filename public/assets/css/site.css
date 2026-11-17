@@ -44,8 +44,11 @@ summary{cursor:pointer}
   .menu-open .menu-btn span{background:transparent}
   .menu-open .menu-btn span::before{transform:translateY(6px) rotate(45deg)}
   .menu-open .menu-btn span::after{transform:translateY(-6px) rotate(-45deg)}
-  /* "html" prefix: these must win over each layout's own desktop .nav rules */
-  html .nav{position:fixed;z-index:19;left:0;right:0;top:calc(var(--pv-h,0px) + var(--hd-h,64px));display:none;flex-direction:column;gap:0;margin:0;padding:6px var(--gut,20px) 18px;border-radius:0;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 24px 40px -28px rgba(0,0,0,.4)}
+  /* "html" prefix: these must win over each layout's own desktop .nav rules.
+     The menu hangs from the header (absolute, top:100%), not from the screen: the header's backdrop-filter
+     makes it the containing block even for fixed children, so a fixed menu counted the preview bar twice
+     and left a gap that showed the page between the header and the menu (iPhone, 17.11.2026). */
+  html .nav{position:absolute;z-index:19;left:0;right:0;top:100%;display:none;flex-direction:column;gap:0;margin:0;padding:6px var(--gut,20px) 18px;border-radius:0;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 24px 40px -28px rgba(0,0,0,.4)}
   html.menu-open .nav{display:flex}
   html .nav a{padding:15px 0;border:0;border-bottom:1px solid var(--line);border-radius:0;background:none;color:var(--ink);font-size:1.1rem;letter-spacing:0;text-transform:none}
   html .nav a:last-child{border-bottom:0}
