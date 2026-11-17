@@ -5,7 +5,7 @@ Collected 17.11.2026 while the site got separate pages. Every answer unlocks som
 | # | Question | What it unlocks |
 |---|---|---|
 | 1 | ~~Which services he does at home~~ answered by Alex 17.11.2026 | Keep, rewrite or remove `/uslugi/vakcinaciya`, `/uslugi/analizy`, `/uslugi/procedury`; add missing ones |
-| 2 | Prices in BYN | `/ceny`, prices on service pages and in the FAQ |
+| 2 | Prices in BYN (call-out 70 руб., at night 140 руб., from Alex, 17.11.2026: is the exam included? from what hour is it night?) | `/ceny`, prices on service pages and in the FAQ |
 | 3 | Hours for calls and visits, urgent calls | `/kontakty`, FAQ, structured data |
 | 4 | How far outside the cities he travels, how travel is charged | `/zona-vyezda`, `/ceny` |
 | 5 | Which animals | Every page says «кошки и собаки» now |
@@ -26,7 +26,7 @@ Collected 17.11.2026 while the site got separate pages. Every answer unlocks som
 Ром, привет! Собрали сайт отдельными страницами: врач, услуги, цены, зона выезда, вопросы, контакты. Посмотри, пожалуйста: https://polotskvet.vercel.app (пока закрыт от поисковиков). Чтобы открыть его для Google и Яндекса, нужны ответы:
 
 1. Услуги на сайте сейчас: осмотр, вакцинация, анализы, ЭКГ, чипирование, стрижка когтей, капельницы, лечебные манипуляции. Всё верно? УЗИ на дому не делаешь?
-2. Цены в рублях, хотя бы «от»: выезд по Полоцку и Новополоцку, осмотр, онлайн-консультация, остальные услуги.
+2. Вызов на дом указали 70 руб., ночной — 140 руб. Осмотр в эту сумму входит? С какого часа считается ночной вызов? И цены в рублях, хотя бы «от»: осмотр, если он отдельно, онлайн-консультация, остальные услуги.
 3. Когда тебе можно звонить и писать, в какие дни и часы выезжаешь? Берёшь срочные вызовы?
 4. Насколько далеко выезжаешь за город и как считаешь дорогу?
 5. Кого принимаешь: только кошек и собак или ещё кого-то (кролики, хорьки, грызуны, птицы)?

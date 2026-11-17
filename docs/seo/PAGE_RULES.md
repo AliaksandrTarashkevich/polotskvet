@@ -72,7 +72,7 @@ Only these. If a sentence needs anything else, leave it out and list it as a que
 - Животные: кошки, собаки и другие домашние питомцы, например попугаи и хомяки (Alex, 17.11.2026: «не обязательно кошки и собаки, ещё же есть попугаи, хомяки и т. д.»). In general text say «питомцы» or «домашние животные»; never write or imply that only cats and dogs are seen. A service page may name cats and dogs where that is the usual case (vaccination), without «только».
 - Телефон: +375 33 649-17-75, link `tel:+375336491775`. Telegram: @romuluslll, link `https://t.me/romuluslll` with `target="_blank" rel="noopener"`.
 - Запись: назовите город и адрес, возраст животного и причину обращения. Возможность выезда, время визита и стоимость согласуем при записи.
-- Стоимость зависит от адреса и необходимой помощи: выезд, осмотр, процедуры, препараты и расходные материалы. Итоговую сумму и возможные доплаты обсуждаем перед записью. There are no prices yet: no numbers, no «от … BYN», no «недорого».
+- Вызов врача на дом — 70 руб., ночной вызов — 140 руб. (Alex, 17.11.2026: «цена за вызов 70р», «ночной вызов 140р»). Write it «Вызов врача на&nbsp;дом&nbsp;— 70&nbsp;руб., ночью&nbsp;— 140&nbsp;руб.» («Вызов врача на&nbsp;дом стоит 70&nbsp;руб., ночью&nbsp;— 140&nbsp;руб., остальное…» inside a sentence; «вызов от&nbsp;70&nbsp;руб.» on the pill of the «Осмотр и консультация» card). The hours that count as night are not known: never write them. Остальное зависит от адреса и необходимой помощи: осмотр, процедуры, препараты и расходные материалы. Итоговую сумму и возможные доплаты обсуждаем перед записью. Whether the exam is included in the 70 руб. is not confirmed: never write that it is. No other prices yet: no other numbers, no «от … BYN», no «недорого».
 - Онлайн-консультация (confirmed): расскажите, что беспокоит питомца, и покажите назначения или результаты обследований; обсудим следующие шаги и необходимость очного приёма. The channel (call, chat, video) and the price are not confirmed: «способ связи и стоимость уточняются при записи».
 - Подготовка к визиту: ветеринарный паспорт, предыдущие назначения и результаты обследований; спокойное, хорошо освещённое место. Подготовку к конкретной процедуре уточнит врач.
 - Ограничения: возможности домашнего приёма ограничены; некоторые исследования и лечение требуют оборудования клиники; перед записью обсудим, подходит ли выезд.
@@ -84,7 +84,7 @@ Only these. If a sentence needs anything else, leave it out and list it as a que
 
 ### Never
 
-Prices, opening hours, «24/7», «круглосуточно», arrival times («приедем за 30 минут»), years of graduation, certificates, number of patients, ratings, reviews, testimonials, guarantees, «лучший», «лучшие в городе», another clinic's address or brand, a fake office address, emergency promises, promises about diagnoses or treatment results. No mass pages for villages or streets.
+Prices other than the call-out (70 руб., at night 140 руб.), opening hours, «24/7», «круглосуточно», arrival times («приедем за 30 минут»), years of graduation, certificates, number of patients, ratings, reviews, testimonials, guarantees, «лучший», «лучшие в городе», another clinic's address or brand, a fake office address, emergency promises, promises about diagnoses or treatment results. No mass pages for villages or streets.
 
 ## Copy
 

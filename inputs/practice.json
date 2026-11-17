@@ -89,7 +89,20 @@
     "visitHours": null,
     "arrivalTimePromise": null,
     "domain": null,
-    "priceList": [],
+    "priceList": [
+      {
+        "item": "Вызов врача на дом",
+        "priceBYN": 70,
+        "includesExam": null,
+        "source": "Alex, 17.11.2026: «цена за вызов 70р»"
+      },
+      {
+        "item": "Ночной вызов врача на дом",
+        "priceBYN": 140,
+        "nightHours": null,
+        "source": "Alex, 17.11.2026: «ночной вызов 140р»"
+      }
+    ],
     "reviews": [],
     "businessProfileUrls": {
       "google": null,

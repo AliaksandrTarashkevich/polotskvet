@@ -7,7 +7,7 @@ Written 17.11.2026, when the site got separate pages. The site is closed to inde
 The open questions are collected, ready to send, in `docs/ROMAN_QUESTIONS.md`. Before launch:
 
 - [x] Services at home confirmed by Alex on 17.11.2026 (list in `inputs/services.json`); ECG, microchipping, nail trimming and drips got their own pages.
-- [ ] Prices in BYN, at least «от»: add them to `/ceny`, the service pages and the FAQ; then `priceRange` may go into the practice node.
+- [ ] Prices in BYN, at least «от»: add them to `/ceny`, the service pages and the FAQ; then `priceRange` may go into the practice node. Done so far: the call-out, 70 руб., at night 140 руб. (Alex, 17.11.2026), on `/ceny`, both home pages, `/uslugi`, `/voprosy` and the home-service pages.
 - [ ] Hours for calls and visits: add to `/kontakty`, the FAQ and `openingHoursSpecification`.
 - [ ] Species (now «кошки и собаки»), «профилактика» as the fifth profile, the second doctor.
 - [ ] Roman reads every page and confirms the texts.
