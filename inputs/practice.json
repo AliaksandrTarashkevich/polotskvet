@@ -1,7 +1,7 @@
 {
   "contextVersion": "1.3",
-  "updatedAt": "2026-11-15",
-  "projectStage": "red_design_approved_deployment_package",
+  "updatedAt": "2026-11-17",
+  "projectStage": "production_build_started",
   "language": "ru",
   "country": "BY",
   "currency": "BYN",
@@ -10,7 +10,8 @@
     "nameConfirmedByUser": true,
     "photo": "assets/doctor-photos/web/roman-portrait.jpg",
     "biography": "Ветеринарный врач с 8-летним опытом. Кардиолог, нефроуролог, специалист функциональной диагностики (УЗИ). Три года работы в клинике «Девять жизней» в Минске. Опыт исполнения обязанностей главного врача.",
-    "education": null,
+    "education": "Витебская государственная академия ветеринарной медицины",
+    "educationSource": "Alex, 17.11.2026: «образование витебская ветеринарная академия». Год выпуска, специальность и степень неизвестны: не указывать.",
     "yearsOfExperience": 8,
     "certificates": [],
     "confirmedSpecializations": [
@@ -71,8 +72,16 @@
       "кошки",
       "собаки"
     ],
-    "phone": null,
-    "messengers": [],
+    "phone": "+375336491775",
+    "phoneDisplay": "+375 33 649-17-75",
+    "messengers": [
+      {
+        "type": "telegram",
+        "handle": "@romuluslll",
+        "url": "https://t.me/romuluslll"
+      }
+    ],
+    "contactsSource": "Alex, 17.11.2026",
     "contactHours": null,
     "visitHours": null,
     "arrivalTimePromise": null,
@@ -136,7 +145,10 @@
     "showDemoFooter": false,
     "brandLogo": "assets/brand/polotskvet-logo.png",
     "redesign": {
-      "status": "direction_chosen_assembly_in_review",
+      "status": "production_build_started",
+      "productionStartedDate": "2026-11-17",
+      "palette": "Один цвет: синий (Alex, 17.11.2026)",
+      "styleAndIconChosen": false,
       "startedDate": "2026-11-13",
       "fixedByUser": ["logo"],
       "conceptsPath": "public/concepts/",
@@ -153,7 +165,7 @@
       "assemblyPalettes": ["1", "red", "terra", "green", "blue", "plum"],
       "paletteNote": "Alex 15.11.2026: в палитре 1 слишком много цветов, нужен один цвет. Пять палитр «один цвет» для сравнения; градиенты не используем.",
       "logoNote": "Alex 15.11.2026: логотип можно поменять позже, например под выбранный цвет; пока остаётся прежним.",
-      "note": "Поля выше описывают прежнюю красно-белую версию, которая остаётся на основной странице до выбора нового направления."
+      "note": "Поля выше в блоке design описывают прежнюю красно-белую версию. С 17.11.2026 главная и отдельные страницы собраны на дизайне 1+ в синей палитре; стиль и иконку выбирают в панели вверху сайта."
     }
   }
 }

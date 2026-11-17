@@ -1,7 +1,7 @@
 #!/bin/zsh
-# Build the two logo options shown on the 1+ page from the house icons Alex supplied on 17.11.2026.
+# Build the two logo options shown on the site (pre-launch «Иконка» choice) from the house icons Alex supplied on 17.11.2026.
 # Each option is the new icon plus the unchanged PolotskVet wordmark, cut from the current web logo.
-# Writes public/concepts/icons/logo-N.png (header and footer) and icon-N.png (favicon and the preview-bar button).
+# Writes public/assets/brand/logo-N.png (header and footer) and icon-N.png (favicon and the preview-bar button).
 # The sources in design-assets/icons/ are never modified.
 # Needs ffmpeg. Run from anywhere:  zsh design-assets/build-logo-options.sh
 #
@@ -18,7 +18,7 @@
 set -e
 cd "${0:A:h}/.."
 SRC=design-assets/icons
-OUT=public/concepts/icons
+OUT=public/assets/brand
 WORDMARK=public/assets/brand/polotskvet-logo.png
 mkdir -p $OUT
 

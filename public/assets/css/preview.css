@@ -1,0 +1,29 @@
+/* Pre-launch only (17.11.2026): the bar where viewers pick the style and the logo icon.
+   Delete together with preview-head.js and preview.js when the choice is made. */
+.pv{position:fixed;z-index:1000;top:0;left:0;right:0;display:flex;flex-wrap:wrap;align-items:center;gap:8px 24px;min-height:46px;padding:8px 10px 8px 14px;background:#15171C;color:#E9EAEE;font:500 13px/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;letter-spacing:0;white-space:nowrap}
+.pv-off .pv{display:none}
+.pv *{font-family:inherit}
+.pv-g{display:flex;align-items:center;gap:5px;flex:none}
+.pv-l{margin-right:4px;color:#8A8F9B;font-size:11px;letter-spacing:.09em;text-transform:uppercase}
+.pv-sseg{display:flex;padding:3px;border-radius:9px;background:#262A33}
+.pv-sseg button{height:24px;padding:0 12px;border-radius:6px;color:#C9CCD4;font-size:12.5px}
+.pv-sseg button:hover{color:#fff}
+.pv-sseg button[aria-pressed="true"]{background:#fff;color:#15171C}
+.pv-icons{gap:8px}
+.pv-icon{display:grid;place-items:center;width:40px;height:30px;border-radius:8px;background:#C9CCD4;opacity:.72;transition:opacity .15s,background .15s,box-shadow .15s}
+.pv-icon img{width:24px;height:24px}
+.pv-icon:hover{opacity:1;background:#fff}
+.pv-icon[aria-pressed="true"]{opacity:1;background:#fff;box-shadow:0 0 0 2px #15171C,0 0 0 4px #fff}
+.pv-tools{display:flex;align-items:center;gap:2px;margin-left:auto;flex:none}
+.pv-ic{width:32px;height:32px;border-radius:8px;color:#A9ADB8;font-size:17px;line-height:1}
+.pv-ic:hover{background:#262A33;color:#fff}
+.pv-show{position:fixed;z-index:1000;top:8px;right:8px;display:none;height:30px;padding:0 12px;border-radius:999px;background:#15171C;color:#fff;font:600 12px/1 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.pv-off .pv-show{display:block}
+/* phones: the four styles take the first row; the icons, reset and close share the second */
+@media (max-width:760px){
+  .pv{padding:6px 10px 8px;gap:8px 16px}
+  .pv-tools{order:5}
+  .pv-sseg button{padding:0 10px}
+}
+@media (max-width:400px){.pv-sseg button{padding:0 7px}}
+@media (max-width:359px){.pv-l{display:none}}

@@ -15,5 +15,12 @@
         }
       ]
     }
+  ],
+  "redirects": [
+    {
+      "source": "/concepts/1plus",
+      "destination": "/",
+      "permanent": false
+    }
   ]
 }

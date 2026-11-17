@@ -60,20 +60,23 @@
         "untouched": "public/concepts/photos/orig/gen-cat-ear.jpg",
         "original": "design-assets/generated/gen-cat-ear.webp",
         "scene": "Brief scene 1b: gloved hands check a ginger cat's ear on a sofa at home",
-        "usedOn": "1+, next to the statement «Дома питомцу спокойнее»"
+        "usedOn": "1+, next to the statement «Дома питомцу спокойнее»",
+        "production": "public/assets/photos/gen-cat-ear.jpg"
       },
       {
         "file": "public/concepts/photos/gen-cat-steth.jpg",
         "untouched": "public/concepts/photos/orig/gen-cat-steth.jpg",
         "original": "design-assets/generated/gen-cat-steth.webp",
         "scene": "Brief scene 1a, on a table instead of a sofa: gloved hands listen to a tabby cat with a stethoscope at home",
-        "usedOn": "1+, wide photo above the services"
+        "usedOn": "1+, wide photo above the services",
+        "production": "public/assets/photos/gen-cat-steth.jpg"
       }
     ],
     "processing": "Colour-matched to the doctor photos by design-assets/grade-photos.sh, exported as JPEG at q 5",
     "generated": true,
     "notRoman": true,
-    "rule": "Illustrations, not Roman and not his patients: never name Roman in their alt text or captions, never present them as real cases. Replace them with real home-visit photos when those arrive."
+    "rule": "Illustrations, not Roman and not his patients: never name Roman in their alt text or captions, never present them as real cases. Replace them with real home-visit photos when those arrive.",
+    "note": "Since 17.11.2026 the site uses the copies in public/assets/photos/; the public/concepts/photos/ copies serve the old concept pages only."
   },
   "logoOptions": {
     "addedAt": "2026-11-17",
@@ -82,20 +85,26 @@
       {
         "option": "1",
         "original": "design-assets/icons/icon-1.png",
-        "logo": "public/concepts/icons/logo-1.png",
-        "icon": "public/concepts/icons/icon-1.png",
+        "logo": "public/assets/brand/logo-1.png",
+        "icon": "public/assets/brand/icon-1.png",
         "drawing": "Blue house outline with a window; dark navy dog and cat silhouettes inside"
       },
       {
         "option": "2",
         "original": "design-assets/icons/icon-2.png",
-        "logo": "public/concepts/icons/logo-2.png",
-        "icon": "public/concepts/icons/icon-2.png",
+        "logo": "public/assets/brand/logo-2.png",
+        "icon": "public/assets/brand/icon-2.png",
         "drawing": "Dark navy house outline with a window, a blue swoosh, a navy cat silhouette and an outlined dog head"
       }
     ],
     "processing": "design-assets/build-logo-options.sh (ffmpeg): alpha clean-up, crop, premultiplied scaling. Each logo is the icon plus the unchanged PolotskVet wordmark cut from public/assets/brand/polotskvet-logo.png; each icon is a 128x128 square used as the favicon and the preview-bar button.",
-    "usedOn": "1+ only: header and footer logo and the favicon, picked with «Иконка» in the preview bar. The main page keeps the old logo.",
+    "usedOn": "Every page since 17.11.2026: header and footer logo and the favicon, picked with «Иконка» in the pre-launch bar. The old red-paw logo files stay in public/assets/brand/ for history.",
     "status": "Options for review, nothing approved yet."
+  },
+  "productionPhotos": {
+    "addedAt": "2026-11-17",
+    "folder": "public/assets/photos/",
+    "source": "Copies of the colour-matched set made by design-assets/grade-photos.sh (public/concepts/photos/): the five photos of Roman and the two generated home-visit illustrations.",
+    "rule": "Originals in public/assets/doctor/ are never modified. Re-run grade-photos.sh and copy again if the grading changes."
   }
 }

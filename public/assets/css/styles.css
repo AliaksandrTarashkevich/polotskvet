@@ -1,9 +1,10 @@
-/* 1+ in three bolder directions, picked with «Стиль» in the preview bar (15.11.2026: Alex asked for something
-   more fun in colour and UI but could not name it, so these are three answers to compare live).
-   Every style reads only palette tokens, so any style works with any palette. «Спокойно» (calm) is 1plus.css as is.
+/* The site in four styles, picked with «Стиль» in the pre-launch bar (15.11.2026: Alex asked for something
+   more fun in colour and UI but could not name it, so three bolder answers sit next to the calm one; 17.11.2026 the
+   choice is open to other viewers). Every style reads only palette tokens. «Спокойно» (calm) is site.css as is.
      bold — colour as whole surfaces, thick outlines and offset shadows
      play — stickers, paws, handwriting, wavy edges and a cat that watches the pointer
-     mag  — editorial: photos run to the window edge, large type, hairlines instead of boxes */
+     mag  — editorial: photos run to the window edge, large type, hairlines instead of boxes
+   When one style is chosen: keep its rules (drop the html[data-style] prefix), delete the others and preview.*. */
 
 :root{
   --paw:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cellipse cx='13' cy='27' rx='6.5' ry='8.5'/%3E%3Cellipse cx='25' cy='14' rx='6.5' ry='8.5'/%3E%3Cellipse cx='39' cy='14' rx='6.5' ry='8.5'/%3E%3Cellipse cx='51' cy='27' rx='6.5' ry='8.5'/%3E%3Cpath d='M32 31c-10 0-17 9-17 16 0 6 4 9 9 9 3 0 5-2 8-2s5 2 8 2c5 0 9-3 9-9 0-7-7-16-17-16z'/%3E%3C/svg%3E");
@@ -205,4 +206,47 @@ html[data-style="mag"] .contact{border-radius:0}
   html[data-style="mag"] .hero-photo{width:auto;justify-self:stretch;margin-inline:calc(-1 * var(--gut));border-radius:0}
   html[data-style="mag"] .why-photo,html[data-style="mag"] .svc-photo{aspect-ratio:4/3;margin-inline:calc(-1 * var(--gut))}
   html[data-style="mag"] .grid{grid-template-columns:1fr}
+}
+
+/* ================= inner pages (17.11.2026): the same four styles for breadcrumbs, page hero,
+   «Коротко», related links, tiles and contact cards ================= */
+/* Смело: the page hero on the deep colour like the home hero, blocks with outlines and offset shadows */
+html[data-style="bold"] .page-hero{position:relative;isolation:isolate;color:var(--on-brand)}
+html[data-style="bold"] .page-hero::before{content:"";position:absolute;z-index:-1;inset:0 calc(50% - 50vw);background:var(--brand)}
+html[data-style="bold"] .page-hero .eyebrow,html[data-style="bold"] .page-hero .lead,html[data-style="bold"] .crumbs{color:var(--on-brand-2)}
+html[data-style="bold"] .crumbs a:hover{color:var(--on-brand)}
+html[data-style="bold"] .page-hero h1 em{color:var(--signal)}
+html[data-style="bold"] .page-hero .btn-cta{background:var(--cta-inv);color:var(--on-cta-inv);box-shadow:4px 4px 0 var(--signal)}
+html[data-style="bold"] .page-photo{border-radius:20px;box-shadow:12px 12px 0 var(--signal)}
+html[data-style="bold"] .page-hero+.answer{margin-top:clamp(28px,4vw,48px)}
+html[data-style="bold"] .answer{border-radius:20px;background:var(--cta);color:var(--on-cta)}
+html[data-style="bold"] .answer .note,html[data-style="bold"] .answer a{color:var(--on-cta)}
+html[data-style="bold"] .links a,html[data-style="bold"] .reach a{border-radius:16px;box-shadow:inset 0 0 0 2px var(--ink),4px 4px 0 var(--ink);transition:translate .15s,box-shadow .15s}
+html[data-style="bold"] .links a:hover,html[data-style="bold"] .reach a:hover{translate:-2px -2px;box-shadow:inset 0 0 0 2px var(--ink),6px 6px 0 var(--ink)}
+html[data-style="bold"] .tiles>*{border-radius:16px;background:var(--tint);box-shadow:inset 0 0 0 2px var(--ink)}
+html[data-style="bold"] .dots li::before{border-radius:2px}
+/* Игриво: rounder, slightly tilted blocks, paws for bullets */
+html[data-style="play"] .page-photo{border-radius:44px;rotate:1.4deg}
+html[data-style="play"] .answer{border-radius:38px;rotate:-.5deg}
+html[data-style="play"] .links a,html[data-style="play"] .reach a,html[data-style="play"] .tiles>*{border-radius:30px}
+html[data-style="play"] .links a:nth-child(odd),html[data-style="play"] .tiles>*:nth-child(odd){rotate:-.7deg}
+html[data-style="play"] .links a:nth-child(even),html[data-style="play"] .tiles>*:nth-child(even){rotate:.8deg}
+html[data-style="play"] .dots li::before{left:2px;top:.42em;width:14px;height:14px;border-radius:0;-webkit-mask:var(--paw) center/contain no-repeat;mask:var(--paw) center/contain no-repeat}
+html[data-style="play"] .related{position:relative}
+html[data-style="play"] .related::before{content:"";position:absolute;top:0;right:3%;width:120px;height:120px;background:var(--cta);opacity:.1;pointer-events:none;rotate:-18deg;-webkit-mask:var(--paw) center/contain no-repeat;mask:var(--paw) center/contain no-repeat}
+/* Журнал: hairlines instead of boxes, square photos */
+html[data-style="mag"] .page-photo{border-radius:0}
+html[data-style="mag"] .answer{padding:22px 0;border-radius:0;background:none;border-block:1px solid var(--ink)}
+html[data-style="mag"] .prose{border-top-color:var(--ink)}
+html[data-style="mag"] .links{gap:0 clamp(24px,4vw,56px)}
+html[data-style="mag"] .links a,html[data-style="mag"] .links a:hover,html[data-style="mag"] .reach a,html[data-style="mag"] .reach a:hover{padding:18px 0 22px;border-radius:0;background:none;box-shadow:none;translate:none;border-top:1px solid var(--ink)}
+html[data-style="mag"] .tiles>*{padding:18px 0 0;border-radius:0;background:none;border-top:1px solid var(--ink)}
+html[data-style="bold"] .gallery .ph{border-radius:16px;box-shadow:8px 8px 0 var(--ink)}
+html[data-style="play"] .gallery .ph{border-radius:36px}
+html[data-style="play"] .gallery figure:nth-child(odd) .ph{rotate:-1.2deg}
+html[data-style="play"] .gallery figure:nth-child(even) .ph{rotate:1.2deg}
+html[data-style="mag"] .gallery .ph{border-radius:0}
+@media (max-width:900px){
+  html[data-style="bold"] .page-photo{box-shadow:8px 8px 0 var(--signal)}
+  html[data-style="mag"] .page-photo{width:auto;justify-self:stretch;margin-inline:calc(-1 * var(--gut))}
 }
