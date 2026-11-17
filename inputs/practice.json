@@ -1,6 +1,6 @@
 {
   "contextVersion": "1.3",
-  "updatedAt": "2026-11-17",
+  "updatedAt": "2026-11-18",
   "projectStage": "production_build_started",
   "language": "ru",
   "country": "BY",
@@ -46,6 +46,21 @@
       "organization": null,
       "dates": null
     },
+    "internships": [
+      {
+        "title": "Стажировка в клинике «САС»",
+        "organization": "САС",
+        "nameNote": "Название записано на слух",
+        "city": null,
+        "year": null,
+        "mentor": null,
+        "area": null,
+        "source": "17.11.2026: «он точно ходил в САС-клинику на практику к врачу, по-моему»",
+        "confirmedByDoctor": false,
+        "onSite": "/vrach, «Образование и опыт», с 18.11.2026"
+      }
+    ],
+    "conferencesAndCourses": [],
     "careApproach": [
       "Pet-friendly приём",
       "Доказательная медицина"

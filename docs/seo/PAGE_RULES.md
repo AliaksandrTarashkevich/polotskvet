@@ -64,6 +64,7 @@ Only these. If a sentence needs anything else, leave it out and list it as a que
 - Образование: Витебская государственная академия ветеринарной медицины. Year, specialty and degree are unknown: do not write them, do not write «окончил с отличием» or similar.
 - 3 года в клинике «Девять жизней», Минск (no dates; never use the clinic's brand beyond this line, no «самая передовая»).
 - Исполнял обязанности главного врача (place and dates unknown: never attach it to «Девять жизней»).
+- Стажировка в клинике «САС» (request of 17.11.2026: «он точно ходил в САС-клинику на практику к врачу, по-моему»). Only on `/vrach`, in «Образование и опыт», as «<b>Стажировка</b> в&nbsp;клинике „САС“». Provisional: the name is as heard, and the year, city, mentor and area are unknown until Roman answers question 11 in `docs/ROMAN_QUESTIONS.md`. Do not add them, do not spread the line to other pages; fix or remove it after his answer. No conferences or courses are confirmed: do not write any.
 - Профили: терапия, кардиология, нефроурология, функциональная диагностика (УЗИ), профилактика. «Профилактика» still needs Roman's confirmation; keep it in the list as on the home page.
 - Подход: pet-friendly приём («спокойно и бережно — с вниманием к характеру и самочувствию питомца») и доказательная медицина («обоснованные назначения и понятные объяснения: что делаем и зачем это нужно»).
 - Формат: выезд на дом и онлайн-консультации. No clinic, no office address, no in-clinic appointments.
